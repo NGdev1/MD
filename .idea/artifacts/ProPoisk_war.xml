@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ProPoisk:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ProPoisk-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="ProPoisk:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,86 @@
+<dataSource name="MySQL - pro_poisk@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="pro_poisk">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="base1" />
+    <schema id="3" name="gruber" />
+    <schema id="4" name="information_schema" />
+    <schema id="5" name="mysql" />
+    <schema id="6" name="performance_schema" />
+    <schema id="7" name="users" />
+    <table id="8" parent="1" name="feed" />
+    <table id="9" parent="1" name="users" />
+    <column id="10" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="11" parent="8" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="12" parent="8" name="author_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="13" parent="8" name="text">
+      <mandatory>1</mandatory>
+      <data-type>varchar(300)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="date_time">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="15" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="16" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="9" name="login">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="password">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="19" parent="9" name="gender">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="20" parent="9" name="phone">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="21" parent="9" name="DOB">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="22" parent="9" name="city">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="23" parent="9" name="image">
+      <mandatory>1</mandatory>
+      <data-type>longblob|0</data-type>
+    </column>
+    <column id="24" parent="9" name="friends">
+      <mandatory>1</mandatory>
+      <data-type>varchar(300)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <index id="25" parent="9" name="id">
+      <columns>id</columns>
+      <desc-columns />
+    </index>
+    <key id="26" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
