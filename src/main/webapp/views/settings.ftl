@@ -22,12 +22,18 @@
 
     <div class="center-content">
         <div class="container">
-            <div class="title">Профиль</div>
+            <div class="title">Настройки профиля</div>
             <form id="new_feed" class="news_item" action="" method="post">
                 <input name="action" value="change_profile" type="hidden">
-                <input class="news_item_input" name="login" value="${user.getName()}"/>
-                <input class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"
-                       pattern="2-[0-9]"/>
+                <input placeholder="Имя:" class="news_item_input" name="login" value="${user.getName()}"/>
+                    <input placeholder="Фамилия:" class="news_item_input" name="text"/>
+                    <input placeholder="Отчество:" class="news_item_input" name="text"/>
+                <input placeholder="Телефон:" class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"
+
+                    <input placeholder="@Mail:" class="news_item_input" name="text"/>
+                    <input placeholder="Пароль:" class="news_item_input" name="text"/>
+                    <input placeholder="Повторите пароль:" class="news_item_input" name="text"/>
+
                 <input class="button_add_news_item" type="submit" value="Сохранить"/>
             </form>
         </div>

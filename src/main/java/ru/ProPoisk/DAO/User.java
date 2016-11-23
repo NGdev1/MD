@@ -13,8 +13,10 @@ public class User {
     private String DOB;
     private String city;
     private String imageB64;
+    private String otryad;
+    private String email;
 
-    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64){
+    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email){
         this.name = name;
         this.password = password.hashCode();
         this.isMale = isMale;
@@ -22,9 +24,11 @@ public class User {
         this.DOB = DOB;
         this.city = city;
         this.imageB64 = imageB64;
+        this.otryad = otryad;
+        this.otryad = email;
     }
 
-    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64){
+    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email){
         this.name = name;
         this.password = passwordHash;
         this.isMale = isMale;
@@ -32,6 +36,8 @@ public class User {
         this.DOB = DOB;
         this.city = city;
         this.imageB64 = imageB64;
+        this.otryad = otryad;
+        this.otryad = email;
     }
 
     public boolean confirmPassword(String password){
@@ -62,6 +68,14 @@ public class User {
         return city;
     }
 
+    public String getOtryad(){
+        return otryad;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
     public String getImageB64(){
         return imageB64;
     }
@@ -76,6 +90,14 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void setOtryad(String otryad) {
+        this.otryad = otryad;
+    }
+
+    public void setEmail(String email) {
+        this.otryad = email;
     }
 
     public void setId(int id) {
@@ -105,6 +127,7 @@ public class User {
     @Override
     public String toString() {
         return "Имя: " + name + "; id: " + Integer.toString(id) + "; Пол: " + Boolean.toString(isMale) +
-                "; number: " + getPhoneNumber() + "; город: " + city + "; Дата рождения: " + DOB;
+                "; number: " + getPhoneNumber() + "; город: " + city + "; Дата рождения: " + DOB + "; Отряд: " + otryad
+                + "; email " + email;
     }
 }

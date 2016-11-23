@@ -12,6 +12,7 @@
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/news_item.css" rel="stylesheet">
 
+
     <script src="/js/jquery.min.js"></script>
 </head>
 <body>

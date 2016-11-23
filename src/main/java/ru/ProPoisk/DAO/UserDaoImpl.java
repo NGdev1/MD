@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 
         Connection connection = DbWrapper.getConnection();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image) VALUES (?, ?, ?, ?, ?, ?, ?);");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image, email, otryad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
         preparedStatement.setString(1, user.getName());
         preparedStatement.setInt(2, user.getPasswordHash());
@@ -41,6 +41,8 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setString(5, user.getDOB());
         preparedStatement.setString(6, user.getCity());
         preparedStatement.setString(7, user.getImageB64());
+        preparedStatement.setString(8, user.getOtryad());
+        preparedStatement.setString(9, user.getEmail());
 
         preparedStatement.execute();
     }
@@ -76,7 +78,9 @@ public class UserDaoImpl implements UserDao {
                     resultSet.getString("phone"),
                     resultSet.getString("DOB"),
                     resultSet.getString("city"),
-                    resultSet.getString("image")
+                    resultSet.getString("image"),
+                    resultSet.getString("otryad"),
+                    resultSet.getString("email")
             );
             user.setId(resultSet.getInt("id"));
 
@@ -106,7 +110,9 @@ public class UserDaoImpl implements UserDao {
                         resultSet.getString("phone"),
                         resultSet.getString("DOB"),
                         resultSet.getString("city"),
-                        resultSet.getString("image")
+                        resultSet.getString("image"),
+                        resultSet.getString("otryad"),
+                        resultSet.getString("email")
                 );
                 user.setId(resultSet.getInt("id"));
 

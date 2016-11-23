@@ -27,6 +27,12 @@
         <input class="form-control" type="text" name="name" placeholder="Имя (Логин)"/>
         <div class="error_message" id="message" style="display: none">Введите имя</div>
 
+            <input class="form-control" type="text" name="surname" placeholder="Фамилия"/>
+
+            <input class="form-control" type="text" name="patronymic" placeholder="Отчество"/>
+
+            <input class="form-control" type="text" name="mail" placeholder="@Mail"/>
+
         <input class="form-control" type="text" name="phone" placeholder="Номер телефона"/>
 
         <label for="image">Фото</label>
@@ -37,6 +43,7 @@
 
         <label for="DOB">Дата рождения</label>
         <input id="DOB" class="form-control" type="date" name="DOB" placeholder="Дата рождения"/>
+
         <div>Город:</div>
         <select id="city" class="form-control" name="city">
             <option value="No">Город...</option>
@@ -44,6 +51,21 @@
             <option value="Moscow">Москва</option>
             <option value="Spb">Санкт-Петербург</option>
         </select>
+
+        <div>Отряд:</div>
+        <select id="otryad" class="form-control" name="otryad">
+            <option value="No">Отряд...</option>
+            <option value="Legion">Легион</option>
+            <option value="Himik">Химик</option>
+            <option value="KP">Книга Памяти</option>
+            <option value="SD">Снежный Десант</option>
+            <option value="KS">Красная Стрела</option>
+            <option value="Vozrozhdenie">Возрождение</option>
+            <option value="ZF">Западный Фронт</option>
+        </select>
+
+
+
         <div>Пол:</div>
         <div class="radio-group">
             <span>Мужской</span>
