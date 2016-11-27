@@ -52,6 +52,7 @@
             <option value="Spb">Санкт-Петербург</option>
         </select>
 
+
         <div>Отряд:</div>
         <select id="otryad" class="form-control" name="otryad">
             <option value="No">Отряд...</option>
@@ -62,8 +63,10 @@
             <option value="KS">Красная Стрела</option>
             <option value="Vozrozhdenie">Возрождение</option>
             <option value="ZF">Западный Фронт</option>
+            <option value="PT">Поисковая Тропа</option>
+            <option value="R">Разведка</option>
+            <option value="SKIF">СКИФ</option>
         </select>
-
 
 
         <div>Пол:</div>
