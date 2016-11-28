@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0437e00a-9c6b-4030-93e4-84e43fd799fd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/unregistered/register.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/unregistered/register.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MD.iws" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="register.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/unregistered/register.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15184382">
-              <caret line="71" column="75" selection-start-line="71" selection-start-column="75" selection-end-line="71" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.44685465">
+              <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -762,7 +763,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37640000" />
+    <option name="totallyTimeSpent" value="37722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1183,8 +1184,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/unregistered/register.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15184382">
-          <caret line="71" column="75" selection-start-line="71" selection-start-column="75" selection-end-line="71" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.44685465">
+          <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
           <folding />
         </state>
       </provider>
