@@ -31,7 +31,7 @@
 
             <input class="form-control" type="text" name="patronymic" placeholder="Отчество"/>
 
-            <input class="form-control" type="text" name="mail" placeholder="@Mail"/>
+            <input class="form-control" type="text" name="mail" placeholder="@Mail, для обратной связи"/>
 
         <input class="form-control" type="text" name="phone" placeholder="Номер телефона"/>
 
@@ -50,22 +50,26 @@
             <option value="Kazan">Казань</option>
             <option value="Moscow">Москва</option>
             <option value="Spb">Санкт-Петербург</option>
+            <option value="S">Самара</option>
+            <option value="Yl">Ульяновск</option>
         </select>
 
 
         <div>Отряд:</div>
         <select id="otryad" class="form-control" name="otryad">
             <option value="No">Отряд...</option>
-            <option value="Legion">Легион</option>
-            <option value="Himik">Химик</option>
-            <option value="KP">Книга Памяти</option>
-            <option value="SD">Снежный Десант</option>
-            <option value="KS">Красная Стрела</option>
-            <option value="Vozrozhdenie">Возрождение</option>
-            <option value="ZF">Западный Фронт</option>
-            <option value="PT">Поисковая Тропа</option>
-            <option value="R">Разведка</option>
-            <option value="SKIF">СКИФ</option>
+            <option value="Legion">"Легион" ТИСБИ г. Казань</option>
+            <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
+            <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
+            <option value="SD">"Снежный десант" Казанского Федерального университета г. Казань</option>
+            <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
+            <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
+            <option value="ZF">"Западный Фронт" г. Казань</option>
+            <option value="PT">"Поисковая тропа" КГЭУ г.Казань</option>
+            <option value="R">"Разведка" г. Казань</option>
+            <option value="SKIF">"СКИФ" ТГГПУ г. Казань</option>
+            <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
+            <option value="R">"Юные патриоты России" г. Казань</option>
         </select>
 
 
