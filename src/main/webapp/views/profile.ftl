@@ -22,6 +22,24 @@
 
     <div class="center-content">
         <div class="container">
+            <div class="title">Профиль</div>
+            <form id="new_feed" class="news_item" action="" method="post">
+                <input name="action" value="change_profile" type="hidden">
+                <input placeholder="Фото" class="news_item_input" name="images"/>
+                <input placeholder="Имя:" class="news_item_input" name="login" value="${user.getName()}"/>
+                <input placeholder="Фамилия:" class="news_item_input" name="text"/>
+                <input placeholder="Отчество:" class="news_item_input" name="text"/>
+                <input placeholder="Отряд:" class="news_item_input" name="otryad" value="${user.getOtryad()}"/>
+                <input placeholder="Телефон:" class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"/>
+                <input placeholder="@Mail:" class="news_item_input" name="mail" value="${user.getEmail()}"/>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+    <div class="center-content">
+        <div class="container">
 
             <form id="new_feed" class="news_item" action="" method="post">
                 <input name="action" value="new_feed_item" type="hidden">

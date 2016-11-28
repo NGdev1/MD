@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 
         Connection connection = DbWrapper.getConnection();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image, email, otryad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image, otryad, email, surname, patronymic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
         preparedStatement.setString(1, user.getName());
         preparedStatement.setInt(2, user.getPasswordHash());
@@ -43,6 +43,8 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setString(7, user.getImageB64());
         preparedStatement.setString(8, user.getOtryad());
         preparedStatement.setString(9, user.getEmail());
+        preparedStatement.setString(10, user.getsurname());
+        preparedStatement.setString(11, user.getpatronymic());
 
         preparedStatement.execute();
     }
@@ -80,7 +82,9 @@ public class UserDaoImpl implements UserDao {
                     resultSet.getString("city"),
                     resultSet.getString("image"),
                     resultSet.getString("otryad"),
-                    resultSet.getString("email")
+                    resultSet.getString("email"),
+                    resultSet.getString("surname"),
+                    resultSet.getString("patronymic")
             );
             user.setId(resultSet.getInt("id"));
 
@@ -112,7 +116,9 @@ public class UserDaoImpl implements UserDao {
                         resultSet.getString("city"),
                         resultSet.getString("image"),
                         resultSet.getString("otryad"),
-                        resultSet.getString("email")
+                        resultSet.getString("email"),
+                        resultSet.getString("surname"),
+                        resultSet.getString("patronymic")
                 );
                 user.setId(resultSet.getInt("id"));
 
