@@ -54,7 +54,7 @@
             <option value="Yl">Ульяновск</option>
         </select>
 
-        
+
 
         <div>Отряд:</div>
         <select id="otryad" class="form-control" name="otryad">
