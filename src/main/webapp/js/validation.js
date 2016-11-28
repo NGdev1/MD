@@ -67,7 +67,9 @@ $(document).ready(function () {
                             "password" : $('input[name=password]').val(),
                             "password2" : $('input[name=password2]').val(),
                             "DOB" : $('#DOB').val(),
-                            "city" : $('select option:selected').val(),
+                            "city" : $('select[name=city] option:selected').val(),
+                            "otryad" : $('select[name=otryad] option:selected').val(),
+                            "email" : $('input[name=mail]').val(),
                             "sex" : $('input[name=sex]:checked').val()
                         }
                     }).done(function(data) {
