@@ -76,7 +76,7 @@
         <div>Пол:</div>
         <div class="radio-group">
             <span>Мужской</span>
-            <input type="radio" placeholder="Пол" name="sex" value="male"/>
+            <input type="radio" placeholder="Пол" name="sex" value="male"/> gh
             <span>Женский</span>
             <input type="radio" placeholder="Пол" name="sex" value="female"/>
         </div>
