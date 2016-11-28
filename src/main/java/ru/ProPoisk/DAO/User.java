@@ -25,7 +25,7 @@ public class User {
         this.city = city;
         this.imageB64 = imageB64;
         this.otryad = otryad;
-        this.otryad = email;
+        this.email = email;
     }
 
     public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email){
@@ -37,7 +37,7 @@ public class User {
         this.city = city;
         this.imageB64 = imageB64;
         this.otryad = otryad;
-        this.otryad = email;
+        this.email = email;
     }
 
     public boolean confirmPassword(String password){

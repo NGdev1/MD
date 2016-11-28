@@ -27,11 +27,11 @@
         <input class="form-control" type="text" name="name" placeholder="Имя (Логин)"/>
         <div class="error_message" id="message" style="display: none">Введите имя</div>
 
-            <input class="form-control" type="text" name="surname" placeholder="Фамилия"/>
+        <input class="form-control" type="text" name="surname" placeholder="Фамилия"/>
 
-            <input class="form-control" type="text" name="patronymic" placeholder="Отчество"/>
+        <input class="form-control" type="text" name="patronymic" placeholder="Отчество"/>
 
-            <input class="form-control" type="text" name="mail" placeholder="@Mail, для обратной связи"/>
+        <input class="form-control" type="text" name="mail" placeholder="@Mail, для обратной связи"/>
 
         <input class="form-control" type="text" name="phone" placeholder="Номер телефона"/>
 
@@ -55,7 +55,6 @@
         </select>
 
 
-
         <div>Отряд:</div>
         <select id="otryad" class="form-control" name="otryad">
             <option value="No">Отряд...</option>
@@ -72,7 +71,6 @@
             <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
             <option value="R">"Юные патриоты России" г. Казань</option>
         </select>
-
 
 
         <div>Пол:</div>

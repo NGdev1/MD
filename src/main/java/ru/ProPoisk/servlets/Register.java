@@ -71,6 +71,7 @@ public class Register extends HttpServlet {
                 dao.saveUser(user);
             } catch (SQLException e) {
                 pw.write("SQL error!");
+                e.printStackTrace();
                 pw.close();
                 return;
             }
