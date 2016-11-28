@@ -54,6 +54,7 @@
             <option value="Yl">Ульяновск</option>
         </select>
 
+        
 
         <div>Отряд:</div>
         <select id="otryad" class="form-control" name="otryad">
@@ -71,6 +72,7 @@
             <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
             <option value="R">"Юные патриоты России" г. Казань</option>
         </select>
+
 
 
         <div>Пол:</div>
