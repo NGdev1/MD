@@ -77,7 +77,7 @@
 
         <div>Пол:</div>
         <div class="radio-group">
-            <span>Мужской</span>
+            <span>Средний</span>
             <input type="radio" placeholder="Пол" name="sex" value="male"/>
             <span>Женский</span>
             <input type="radio" placeholder="Пол" name="sex" value="female"/>
