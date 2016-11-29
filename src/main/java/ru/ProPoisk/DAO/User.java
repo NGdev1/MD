@@ -73,9 +73,9 @@ public class User {
         return email;
     }
 
-    public String getsurname() {return surname;}
+    public String getSurname() {return surname;}
 
-    public String getpatronymic() {return patronymic;}
+    public String getPatronymic() {return patronymic;}
 
     public String getImageB64(){return imageB64;}
 

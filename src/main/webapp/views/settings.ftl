@@ -27,10 +27,10 @@
                 <input name="action" value="change_profile" type="hidden">
                 <input placeholder="Фото" class="news_item_input" name="images"/>
                 <input placeholder="Имя:" class="news_item_input" name="login" value="${user.getName()}"/>
-                    <input placeholder="Фамилия:" class="news_item_input" name="text"/>
-                    <input placeholder="Отчество:" class="news_item_input" name="text"/>
-                    <input placeholder="Телефон:" class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"
-                    <input placeholder="@Mail:" class="news_item_input" name="text"/>
+                    <input placeholder="Фамилия:" class="news_item_input" name="surname" value="${user.getSurname()}"/>
+                    <input placeholder="Отчество:" class="news_item_input" name="patronymic" value="${user.getPatronymic()}"/>
+                    <input placeholder="Телефон:" class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"/>
+                    <input placeholder="@Mail:" class="news_item_input" name="mail" value="${user.getEmail()}"/>
                     <input placeholder="Пароль:" class="news_item_input" name="text"/>
                     <input placeholder="Повторите пароль:" class="news_item_input" name="text"/>
 

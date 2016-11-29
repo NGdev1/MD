@@ -43,8 +43,8 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setString(7, user.getImageB64());
         preparedStatement.setString(8, user.getOtryad());
         preparedStatement.setString(9, user.getEmail());
-        preparedStatement.setString(10, user.getsurname());
-        preparedStatement.setString(11, user.getpatronymic());
+        preparedStatement.setString(10, user.getSurname());
+        preparedStatement.setString(11, user.getPatronymic());
 
         preparedStatement.execute();
     }
