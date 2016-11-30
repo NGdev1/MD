@@ -32,11 +32,14 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li id="VP"><a href="profile">
-                    <div class="menu_button_text">Все поисковики</div></a></li>
+                    <div class="menu_button_text">Все поисковики</div>
+                </a></li>
                 <li id="MF"><a href="feed">
-                    <div class="menu_button_text">Мои друзья</div></a></li>
+                    <div class="menu_button_text">Мои друзья</div>
+                </a></li>
                 <li id="MO"><a href="feed">
-                    <div class="menu_button_text">Мой отряд</div></a></li>
+                    <div class="menu_button_text">Мой отряд</div>
+                </a></li>
             </ul>
         </div>
     </nav>
@@ -57,6 +60,7 @@
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
                 <div style="margin-left: 250px;"> ${user.getCity()}</div>
+                <input  style="font-size: 15px; margin-left: 450px" class="button_add_news_item" type="submit" value="Добавить в друзья"/>
             </div>
         </#list>
         </div>

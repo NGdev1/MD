@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 
         Connection connection = DbWrapper.getConnection();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image, otryad, email, surname, patronymic) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO `pro_poisk`.`users` (login, password, gender, phone, DOB, city, image, otryad, email, surname, patronymic, dolshnost) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 
         preparedStatement.setString(1, user.getName());
         preparedStatement.setInt(2, user.getPasswordHash());
@@ -45,6 +45,7 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setString(9, user.getEmail());
         preparedStatement.setString(10, user.getSurname());
         preparedStatement.setString(11, user.getPatronymic());
+        preparedStatement.setString(12, user.getDolshnost());
 
         preparedStatement.execute();
     }
@@ -84,7 +85,8 @@ public class UserDaoImpl implements UserDao {
                     resultSet.getString("otryad"),
                     resultSet.getString("email"),
                     resultSet.getString("surname"),
-                    resultSet.getString("patronymic")
+                    resultSet.getString("patronymic"),
+                    resultSet.getString("dolshnost")
             );
             user.setId(resultSet.getInt("id"));
 
@@ -118,7 +120,8 @@ public class UserDaoImpl implements UserDao {
                         resultSet.getString("otryad"),
                         resultSet.getString("email"),
                         resultSet.getString("surname"),
-                        resultSet.getString("patronymic")
+                        resultSet.getString("patronymic"),
+                        resultSet.getString("dolshnost")
                 );
                 user.setId(resultSet.getInt("id"));
 

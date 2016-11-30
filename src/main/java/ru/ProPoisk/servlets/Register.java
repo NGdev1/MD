@@ -61,6 +61,7 @@ public class Register extends HttpServlet {
         String email = req.getParameter("email");
         String surname = req.getParameter("surname");
         String patronymic = req.getParameter("patronymic");
+        String dolshnost = req.getParameter("dolshnost");
 
         TreeMap message = FormDataCheck.checkAllFieldsAndGetErrorMessageIfFieldsAreInvalid(username, phone, DOB, password, password2, sex, city);
 
@@ -68,7 +69,7 @@ public class Register extends HttpServlet {
 
         if (message.isEmpty()) { //No errors
             boolean isMale = sex.equals("male");
-            User user = new User(username, password, isMale, phone, DOB, city, image, otryad, email, surname, patronymic);
+            User user = new User(username, password, isMale, phone, DOB, city, image, otryad, email, surname, patronymic, dolshnost);
             try {
                 dao.saveUser(user);
             } catch (SQLException e) {
