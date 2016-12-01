@@ -15,7 +15,7 @@
             <li id="con"><a href="contacts"><div class="menu_button_text">Контакты</div></a></li>
             <li id="gal"><a href="gallery"><div class="menu_button_text">Галерея</div></a></li>
             <li id="mus"><a href="music"><div class="menu_button_text">Музыка</div></a></li>
-            <li id="ful"><a href="full"><div class="menu_button_text">Full Map</div></a></li>
+            <li id="ful"><a href="full_map"><div class="menu_button_text">Full Map</div></a></li>
             <li id="id"><a href="settings"><div class="menu_button_text">Настройки</div></a></li>
             <li id="ex"><a href="profile?action=logout"><div class="menu_button_text">Выход</div></a></li>
             <#--<li id="con"><a href="#"><div class="menu_button_text">Контакты</div></a></li>-->
