@@ -10,6 +10,7 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/news_item.css" rel="stylesheet">
+    <link href="/css/profile.css" rel="stylesheet">
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/feed.js"></script>
@@ -23,17 +24,14 @@
     <div class="center-content">
         <div class="container">
             <div class="title">Профиль</div>
-            <div style="margin: auto"><img src="../images/no_photo2.png"/></div>
-            <form id="new_feed" class="news_item" action="" method="post">
-                <input name="action" value="change_profile" type="hidden">
-                <input style="min-width: 65%; font-size: 18px; margin:-5.4cm 5cm 0.35cm 5.55cm;"  placeholder="Фамилия:" class="news_item_input" name="surname" value="${user.getSurname()}"/>
-                <input style="min-width: 65%; font-size: 18px; margin-left: 210px" placeholder="Имя:" class="news_item_input" name="login" value="${user.getName()}"/>
-                <input style="min-width: 65%; font-size: 18px; margin-left: 210px" placeholder="Отчество:" class="news_item_input" name="patronymic" value="${user.getPatronymic()}"/>
+            <div style="height: 0;"><img src="../images/no_photo2.png"/></div>
+                <div class="user-info">${user.getSurname()}</div>
+                <div class="user-info">${user.getName()}</div>
+                <div class="user-info">${user.getPatronymic()}</div>
                 <input placeholder="Отряд:" class="news_item_input" name="otryad" value="${user.getOtryad()}"/>
                 <input placeholder="Телефон:" class="news_item_input" type="tel" name="tel" value="${user.getPhoneNumber()}"/>
                 <input placeholder="@Mail:" class="news_item_input" name="mail" value="${user.getEmail()}"/>
                 <input placeholder="dolshnost:" class="news_item_input" name="dolshnost" value="${user.getDolshnost()}"/>
-            </form>
         </div>
     </div>
 
