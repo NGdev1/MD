@@ -30,9 +30,7 @@
                 </label>
                 <input class="button_add_news_item" type="submit"/>
             </form>
-
             <div id="news_container">
-
             </div>
         </div>
     </div>

@@ -16,10 +16,8 @@
 <body>
 <div class="container">
 
-
 <#include "header.ftl">
 <#include "menu.ftl">
-
     <div class="center-content">
         <div class="container">
             <div class="title">Настройки профиля</div>
@@ -48,6 +46,9 @@
 
                 <input class="button_add_news_item" type="submit" value="Сохранить"/>
                 <input style="font-size: 15px; margin-left: 10px" class="button_add_news_item" type="submit" value="Добавить экспедицию"/>
+                <input style="font-size: 15px; margin-left: 10px" class="button_add_news_item" type="button" value="Настройки сообщений"/>
+
+
             </form>
         </div>
     </div>

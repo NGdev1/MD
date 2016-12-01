@@ -61,7 +61,7 @@
             <option value="Legion">"Легион" ТИСБИ г. Казань</option>
             <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
             <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
-            <option value="SD">"Снежный десант" Казанского Федерального университета г. Казань</option>
+            <option value="SD">"Снежный десант" КФУ г. Казань</option>
             <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
             <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
             <option value="ZF">"Западный Фронт" г. Казань</option>
