@@ -8,6 +8,18 @@ body {
     background: url("/images/les.jpg") no-repeat center center fixed;
     /*background: url("/images/Новости.jpg") no-repeat 0 0 fixed;*/
     background-size: cover;
+
+    height: 100%; position: absolute; padding: 0; margin: 0; width: 100%;
+}
+
+#map{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: rgb(229, 227, 223);
+    overflow: hidden;
 }
 
 .image {

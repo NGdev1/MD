@@ -14,21 +14,16 @@
 </head>
 <body>
 
+<div id="map"></div>
+
 <div class="container">
 
 <#include "header.ftl">
 <#include "menu.ftl">
 
-    <div class="center-content">
-        <div class="container">
-            <div id="map" style="height: 100%; position: relative;  background-color: rgb(229, 227, 223); overflow: hidden;"></div>
-
-        </div>
-    </div>
-
+    <script type="text/javascript" src="/js/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbByzdPWzdq1FU3u9vrOWcjOUpPaGJfMA&callback=initMap"
             async defer></script>
-    <script type="text/javascript" src="/js/map.js"></script>
 </div>
 
 </body>
