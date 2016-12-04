@@ -168,4 +168,17 @@ body {
     background-color: #FFFF00;
     border: 1px solid #FF0000;
 }
+.button{
+    position: relative;
+    display: block;
+    color: white;
+    background-color: #139E95;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: 150px;
+    padding: 0;
+    border: 0;
+}
 
