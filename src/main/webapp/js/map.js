@@ -160,10 +160,9 @@ function initMap() {
 
         // Construct a new InfoWindow.
         var infoWindow = new google.maps.InfoWindow({
-            content: '<button onclick="addLocation' + e.latLng.toString() + '" class="button menu_button_text">Добавить точку</button>' +
-            'Широта:' + e.latLng.lat() +
-            '<br/>' +
-            'Долгота:' + e.latLng.lng()
+            content: '<button onclick="addLocation' + e.latLng.toString() + '" class="button menu_button_text" style="margin: auto">Добавить точку</button>' +
+            'Координаты:' +
+            '<br/>' + e.latLng
         });
 
         // Opens the InfoWindow when marker is clicked.
