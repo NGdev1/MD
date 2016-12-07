@@ -119,6 +119,13 @@ function addLocation(lat, lng){
     alert(lat.toString() + " " + lng.toString())
 }
 
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+}
+
 function initMap() {
     // Create a map object and specify the DOM element for display.
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -133,6 +140,8 @@ function initMap() {
             position: google.maps.ControlPosition.BOTTOM_LEFT
         }
     });
+
+    addUserLocationOnMap(map);
 
     map.setOptions({styles: retro});
 
@@ -174,7 +183,60 @@ function initMap() {
         map.panTo(e.latLng);
         infoWindow.open(map, marker);
     });
+
+    function addUserLocationOnMap(map){
+        // Construct a new InfoWindow.
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                var markerUserLocation = new google.maps.Marker({
+                    map: map,
+                    // Define the place with a location, and a query string.
+                    place: {
+                        location: pos,
+                        query: 'Казань'
+
+                    },
+                    // Attributions help users find your site again.
+                    attribution: {
+                        source: 'Google Maps JavaScript API',
+                        webUrl: 'https://developers.google.com/maps/'
+                    }
+                });
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: 'Ваша позиция:<br/>' +
+                    '<button onclick="addLocation' + pos.lat.toString() + '" class="button menu_button_text" style="margin: auto">Добавить точку</button>' +
+                    'Координаты:' +
+                    '<br/>' + e.latLng
+                });
+
+                // Opens the InfoWindow when marker is clicked.
+                markerUserLocation.addListener('click', function () {
+                    map.panTo(e.latLng);
+                    infoWindow.open(map, markerUserLocation);
+                });
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
 }
+
+
 
 
 
