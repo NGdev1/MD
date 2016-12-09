@@ -175,10 +175,13 @@ body {
     background-color: #139E95;
     height: 40px;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50px;
     text-decoration: none;
     width: 150px;
     padding: 0;
     border: 0;
+    font-size: 18px;
 }
 

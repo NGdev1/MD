@@ -9,33 +9,9 @@
 
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/fullmap.css" rel="stylesheet">
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
-
-    <style>
-        .map-control {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-            font-family: 'Roboto', 'sans-serif';
-            margin: 10px;
-            /* Hide the control initially, to prevent it from appearing
-               before the map loads. */
-            display: none;
-        }
-
-        /* Display the control once it is inside the map. */
-        #map .map-control {
-            display: block;
-        }
-
-        .selector-control {
-            font-size: 14px;
-            line-height: 30px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-    </style>
 </head>
 <body>
 
@@ -46,8 +22,16 @@
 <#include "header.ftl">
 <#include "menu.ftl">
 
+    <form id="add_point_form">
+        <div class="title">Добавить точку</div>
+        <label for="name">Название:</label>
+        <input id="name" type="text" name="name">
+
+        <input class="button" type="submit" value="Добавить">
+    </form>
+
     <script type="text/javascript" src="/js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbByzdPWzdq1FU3u9vrOWcjOUpPaGJfMA&signed_in=true&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbByzdPWzdq1FU3u9vrOWcjOUpPaGJfMA&callback=initMap"
             async defer></script>
 </div>
 

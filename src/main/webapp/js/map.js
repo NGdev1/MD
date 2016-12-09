@@ -155,21 +155,18 @@ function initMap() {
         marker = new google.maps.Marker({
             map: map,
             // Define the place with a location, and a query string.
-            place: {
-                location: e.latLng,
-                query: 'Казань'
-
-            },
+            position: e.latLng,
             // Attributions help users find your site again.
             attribution: {
                 source: 'Google Maps JavaScript API',
                 webUrl: 'https://developers.google.com/maps/'
-            }
+            },
+            draggable: true
         });
 
         // Construct a new InfoWindow.
         var infoWindow = new google.maps.InfoWindow({
-            content: '<button onclick="addLocation' + e.latLng.toString() + '" class="button menu_button_text" style="margin: auto">Добавить точку</button>' +
+            content: '<button onclick="addLocation' + e.latLng.toString() + '" class="button" style="margin: auto">Добавить точку</button>' +
             'Координаты:' +
             '<br/>' + e.latLng
         });
@@ -188,6 +185,15 @@ function initMap() {
         // Construct a new InfoWindow.
 
         // Try HTML5 geolocation.
+        var goldStar = {
+            path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+            fillColor: 'yellow',
+            fillOpacity: 0.8,
+            scale: 0.1,
+            strokeColor: 'red',
+            strokeWeight: 3
+        };
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
@@ -207,25 +213,29 @@ function initMap() {
                     attribution: {
                         source: 'Google Maps JavaScript API',
                         webUrl: 'https://developers.google.com/maps/'
-                    }
+                    },
+
+                    label: "Ты",
+                    icon: goldStar,
+                    animation: google.maps.Animation.DROP
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
                     content: 'Ваша позиция:<br/>' +
-                    '<button onclick="addLocation' + pos.lat.toString() + '" class="button menu_button_text" style="margin: auto">Добавить точку</button>' +
+                    '<button onclick="addLocation(' + pos.lat + ", " + pos.lng + ')" class="button" style="margin: auto">Добавить точку</button>' +
                     'Координаты:' +
-                    '<br/>' + e.latLng
+                    '<br/>' + pos.lat + " " + pos.lng +
+                    '<br/>'
                 });
 
                 // Opens the InfoWindow when marker is clicked.
                 markerUserLocation.addListener('click', function () {
-                    map.panTo(e.latLng);
+                    map.panTo(pos);
                     infoWindow.open(map, markerUserLocation);
                 });
 
                 infoWindow.setPosition(pos);
-                infoWindow.setContent('Location found.');
-                map.setCenter(pos);
+
             }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
