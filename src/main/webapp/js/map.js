@@ -116,7 +116,10 @@ var retro = [
 var marker;
 
 function addLocation(lat, lng){
-    alert(lat.toString() + " " + lng.toString())
+    //alert(lat.toString() + " " + lng.toString())
+    $('#add_point_form').show(500);
+    $('#lat').val(lat);
+    $('#lon').val(lng);
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -245,6 +248,9 @@ function initMap() {
         }
     }
 }
+
+$('#add_point_form').hide();
+
 
 
 

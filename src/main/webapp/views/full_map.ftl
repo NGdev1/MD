@@ -9,6 +9,7 @@
 
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/singin.css" rel="stylesheet">
     <link href="/css/fullmap.css" rel="stylesheet">
 
     <script type="text/javascript" src="/js/jquery.min.js"></script>
@@ -25,9 +26,13 @@
     <form id="add_point_form">
         <div class="title">Добавить точку</div>
         <label for="name">Название:</label>
-        <input id="name" type="text" name="name">
+        <input class="form-control" id="name" type="text" name="name">
 
-        <input class="button" type="submit" value="Добавить">
+        <label>Координаты:
+        <input class="form-control" id="lat" type="text" name="lat">
+        <input class="form-control" id="lon" type="text" name="lon">
+        </label>
+        <input style="margin-top: 15px" class="button" type="submit" value="Добавить">
     </form>
 
     <script type="text/javascript" src="/js/map.js"></script>
