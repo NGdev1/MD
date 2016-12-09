@@ -27,6 +27,11 @@
         <div class="title">Добавить точку</div>
         <label for="name">Название:</label>
         <input class="form-control" id="name" type="text" name="name">
+        <label for="name">Описание:</label>
+        <input class="form-control" id="name" type="text" name="name">
+        <label for="name">Фото:</label>
+        <input class="form-control" id="name" type="text" name="name">
+
 
         <label>Координаты:
         <input class="form-control" id="lat" type="text" name="lat">
