@@ -19,7 +19,6 @@ public class User {
     private String patronymic;
     private String dolshnost;
 
-
     public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email, String surname, String patronymic, String dolshnost) {
         this.name = name;
         this.password = password.hashCode();
@@ -86,7 +85,7 @@ public class User {
 
     public void setOtryad(String otryad) {this.otryad = otryad;}
 
-    public void setEmail(String email) {this.otryad = email;}
+    public void setEmail(String email) {this.email = email;}
 
     public void setSurname(String surname) {
         this.surname = surname;

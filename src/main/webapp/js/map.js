@@ -114,12 +114,15 @@ var retro = [
 ];
 
 var marker;
+var infoWindow;
 
 function addLocation(lat, lng){
     //alert(lat.toString() + " " + lng.toString())
     $('#add_point_form').show(500);
     $('#lat').val(lat);
     $('#lon').val(lng);
+
+    infoWindow.close();
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -168,7 +171,7 @@ function initMap() {
         });
 
         // Construct a new InfoWindow.
-        var infoWindow = new google.maps.InfoWindow({
+        infoWindow = new google.maps.InfoWindow({
             content: '<button onclick="addLocation' + e.latLng.toString() + '" class="button" style="margin: auto">Добавить точку</button>' +
             'Координаты:' +
             '<br/>' + e.latLng

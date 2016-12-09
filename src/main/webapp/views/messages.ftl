@@ -62,8 +62,8 @@
             <div class="bubble bubble--alt">нормально, у тебя?</div>
             <form id="new_feed" class="news_item" action="" method="post">
                 <input name="action" value="new_feed_item" type="hidden">
-                <input placeholder="Введи сообщение:" class="news_item_input" name="text"/>
-                <input class="button_add_news_item" type="submit"/>
+                <input placeholder="Введи сообщение:" class="input_green" name="text"/>
+                <input class="button1" type="submit"/>
             </form>
         </div>
     </div>

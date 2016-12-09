@@ -8,8 +8,8 @@ function updateAllFeed() {
     }).done(function(data) {
         var newsContainer = $('#news_container');
         newsContainer.html(data);
-        newsContainer.hide();
-        newsContainer.show(350);
+        //newsContainer.hide();
+        //newsContainer.show(350);
     })
 }
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
         var form = $(this);
 
         form.submit(function() {
-            var text = $('.news_item_input').val();
+            var text = $('#news_item_text').val();
             if (text == '') return false;
 
             $.ajax({

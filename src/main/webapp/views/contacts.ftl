@@ -60,7 +60,7 @@
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
                 <div style="margin-left: 250px;"> ${user.getCity()}</div>
-                <input  style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button_add_news_item" type="submit" value="Добавить в друзья"/>
+                <input  style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1" type="submit" value="Добавить в друзья"/>
                 <div class="divider"></div>
             </div>
         </#list>

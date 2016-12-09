@@ -14,6 +14,19 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/feed.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var dolshnost = '${user.getDolshnost()}';
+            var divDolshnost = $('#dolshnost');
+
+            if(dolshnost == 'S'){
+                divDolshnost.html('"Боец"');
+            } else if (dolshnost == 'NProd'){
+                divDolshnost.html('"Нач.Прод."')
+            }
+        })
+    </script>
 </head>
 <body>
 <div class="container">
@@ -31,16 +44,16 @@
             <div class="user-info">${user.getOtryad()}</div>
             <div class="user-info">${user.getPhoneNumber()}</div>
             <div class="user-info">${user.getEmail()}</div>
-            <div class="user-info">${user.getDolshnost()}</div>
+            <div class="user-info" id="dolshnost"></div>
 
             <div class="divider"></div>
 
             <form id="new_feed" class="news_item" action="" method="post">
                 <input name="action" value="new_feed_item" type="hidden">
                 <label>Ваша новость:
-                    <textarea class="news_item_input" name="text"></textarea>
+                    <textarea id="news_item_text" class="input_green" name="text"></textarea>
                 </label>
-                <input class="button_add_news_item" type="submit"/>
+                <input class="button1" type="submit"/>
             </form>
 
             <div id="news_container">

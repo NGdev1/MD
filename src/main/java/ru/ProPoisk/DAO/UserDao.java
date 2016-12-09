@@ -12,4 +12,5 @@ public interface UserDao {
     User[] getAll();
     void deleteUser(int userId);
     void printAll();
+    void changeUser(User user) throws SQLException;
 }

@@ -26,9 +26,9 @@
             <form id="new_feed" class="news_item" action="" method="post">
                 <input name="action" value="new_feed_item" type="hidden">
                 <label>Ваша новость:
-                    <textarea class="news_item_input" name="text"></textarea>
+                    <textarea id="news_item_text" class="input_green" name="text"></textarea>
                 </label>
-                <input class="button_add_news_item" type="submit"/>
+                <input class="button1" type="submit"/>
             </form>
             <div id="news_container">
             </div>

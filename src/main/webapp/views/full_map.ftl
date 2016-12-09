@@ -23,21 +23,23 @@
 <#include "header.ftl">
 <#include "menu.ftl">
 
-    <form id="add_point_form">
+    <form action="" method="get" id="add_point_form">
+        <div style="height: 0;"><button type="button" style="right: 10px;font-size: 20px; background: none; border: none; position: absolute;" onclick="$('#add_point_form').hide(300)">x</button></div>
+
         <div class="title">Добавить точку</div>
         <label for="name">Название:</label>
         <input class="form-control" id="name" type="text" name="name">
-        <label for="name">Описание:</label>
-        <input class="form-control" id="name" type="text" name="name">
-        <label for="name">Фото:</label>
-        <input class="form-control" id="name" type="text" name="name">
+        <label for="desc">Описание:</label>
+        <input class="form-control" id="desc" type="text" name="desc">
+        <label for="photo">Фото:</label>
+        <input class="form-control" id="photo" type="text" name="photo">
 
 
         <label>Координаты:
         <input class="form-control" id="lat" type="text" name="lat">
         <input class="form-control" id="lon" type="text" name="lon">
         </label>
-        <input style="margin-top: 15px" class="button" type="submit" value="Добавить">
+        <input style="margin-top: 10px" class="button" type="submit" value="Добавить">
     </form>
 
     <script type="text/javascript" src="/js/map.js"></script>

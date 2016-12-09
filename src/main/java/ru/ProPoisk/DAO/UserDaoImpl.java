@@ -162,6 +162,24 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
+    @Override
+    public void changeUser(User user) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE `pro_poisk`.`users` SET login=?, surname=?, patronymic=?, phone=?, email=?, dolshnost=? WHERE id=?;");
+
+        preparedStatement.setString(1, user.getName());
+        preparedStatement.setString(2, user.getSurname());
+        preparedStatement.setString(3, user.getPatronymic());
+        preparedStatement.setString(4, user.getPhoneNumber());
+        preparedStatement.setString(5, user.getEmail());
+        preparedStatement.setString(6, user.getDolshnost());
+
+        preparedStatement.setInt(7, user.getId());
+
+        preparedStatement.execute();
+    }
+
     private boolean stringToBoolean(String s) {
         return !s.equals("0");
     }

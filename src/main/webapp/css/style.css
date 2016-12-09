@@ -185,3 +185,26 @@ body {
     font-size: 18px;
 }
 
+.button1 {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #139E95;
+    text-decoration: none;
+    margin: 0 4px 0 4px;
+}
+
+
+.button1:hover{
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
