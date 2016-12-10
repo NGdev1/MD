@@ -10,6 +10,10 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/news_item.css" rel="stylesheet">
+    <link href="/css/singin.css" rel="stylesheet">
+    <link href="/css/profile.css" rel="stylesheet">
+    <link href="/css/fullmap.css" rel="stylesheet">
+
 
     <script src="/js/jquery.min.js"></script>
 
@@ -20,7 +24,7 @@
             $('#dolshnost option[value=' + dolshnost + ']').attr('selected', 'true');
         });
 
-        var toggleTime = 200;
+        var toggleTime = 400;
 
         function showChangePasswordForm(){
             $('#change_profile_form').hide(toggleTime);
@@ -55,16 +59,16 @@
 
                 <input name="action" value="change_profile" type="hidden">
                 <input style="min-width: 65%; font-size: 18px; margin:-5.4cm 5cm 0.35cm 5.55cm" placeholder="Имя:"
-                       class="input_green" name="login" value="${user.getName()}"/>
+                       class="form-control" name="login" value="${user.getName()}"/>
                 <input style="min-width: 65%; font-size: 18px; margin-left: 210px" placeholder="Фамилия:"
-                       class="input_green" name="surname" value="${user.getSurname()}"/>
+                       class="form-control" name="surname" value="${user.getSurname()}"/>
                 <input style="min-width: 65%; font-size: 18px; margin-left: 210px" placeholder="Отчество:"
-                       class="input_green" name="patronymic" value="${user.getPatronymic()}"/>
-                <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
+                       class="form-control" name="patronymic" value="${user.getPatronymic()}"/>
+                <input placeholder="Телефон:" class="form-control" type="tel" name="tel"
                        value="${user.getPhoneNumber()}"/>
-                <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
+                <input placeholder="@Mail:" class="form-control" name="mail" value="${user.getEmail()}"/>
 
-                <select id="dolshnost" class="input_green" name="dolshnost" title="">
+                <select id="dolshnost" class="form-control" name="dolshnost" title="">
                     <option value="No">Должность...</option>
                     <option value="Kom">"Командир"</option>
                     <option value="ZKom">"Зам. Ком."</option>
@@ -80,8 +84,8 @@
             <form id="change_password_form" class="news_item" action="/settings" method="post" style="display: none">
                 <div class="title">Сменить пароль</div>
 
-                <input placeholder="Пароль:" class="input_green" name="text"/>
-                <input placeholder="Повторите пароль:" class="input_green" name="text"/>
+                <input placeholder="Пароль:" class="form-control" name="text"/>
+                <input placeholder="Повторите пароль:" class="form-control" name="text"/>
 
                 <input type="submit" class="button1" value="Сменить пароль"/>
             </form>
@@ -89,9 +93,12 @@
             <form id="add_expedition_form" class="news_item" action="/settings" method="post" style="display: none">
                 <div class="title">Добавить экспедицию</div>
 
-                <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
-                       value="${user.getPhoneNumber()}"/>
-                <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
+                <input class="form-control" type="text" name="phone" placeholder="Название:"/>
+                <input class="form-control" type="text" name="phone" placeholder="Командир:"/>
+                <input class="form-control" type="text" name="phone" placeholder="Зам. Командира"/>
+                <input class="form-control" type="text" name="phone" placeholder="Отряды:"/>
+                <input class="form-control" type="text" name="phone" placeholder="ЗДЕСЬ КАРТА:)"/>
+                <input class="form-control" type="text" name="phone" placeholder="Бойцы:"/>
 
                 <input type="submit" class="button1" value="Добавить"/>
             </form>
