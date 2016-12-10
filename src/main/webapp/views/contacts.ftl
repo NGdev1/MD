@@ -23,33 +23,26 @@
 <#include "header.ftl">
 <#include "menu.ftl">
 
-    <nav role="navigation" class="navbar_messages">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-        </button>
-
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li id="VP"><a href="profile">
-                    <div class="menu_button_text">Все поисковики</div>
-                </a></li>
-                <li id="MF"><a href="feed">
-                    <div class="menu_button_text">Мои друзья</div>
-                </a></li>
-                <li id="MO"><a href="feed">
-                    <div class="menu_button_text">Мой отряд</div>
-                </a></li>
-            </ul>
-        </div>
-    </nav>
 
     <div class="center-content">
         <div class="container">
+
             <div class="title">Контакты</div>
+        <#list Friends as user>
+            <div style="height: 250px;">
+            ${user_index + 1})
+                <div style="height: 0"><img src="../images/no_photo2.png" alt="${user.getName()}"/></div>
+                <div style="font-size: 30px; margin-left: 250px">${user.getName()}
+                </div>
+                <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
+                <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
+                <div style="margin-left: 250px;"> ${user.getCity()}</div>
+                <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Написать сообщение</a>
+                <div class="divider"></div>
+            </div>
+        </#list>
 
-            <div class="title">Поисковики</div>
-
+            <div style="margin-top: 30px; margin-bottom: 30px" class="title">Поисковики</div>
 
         <#list Users as user>
             <div style="height: 250px;">
@@ -60,10 +53,15 @@
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
                 <div style="margin-left: 250px;"> ${user.getCity()}</div>
-                <input  style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1" type="submit" value="Добавить в друзья"/>
+                <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Добавить в друзья</a>
                 <div class="divider"></div>
             </div>
         </#list>
+            <div style="text-align: center">На сайте ${Users?size} поисковиков</div>
+        </div>
+        <div style="position: fixed; top: 90px; left: 1000px;">
+            <a href="#" class="button"><div class="button_text">Друзья</div></a>
+            <a href="#" class="button"><div class="button_text">Все</div></a>
         </div>
     </div>
 </div>

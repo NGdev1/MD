@@ -185,6 +185,13 @@ body {
     font-size: 18px;
 }
 
+.button_text{
+    margin-left: 15px;
+    padding-top: 7px;
+
+    font-size: 18px;
+}
+
 .button1 {
     display: inline-block;
     padding: 6px 12px;
@@ -198,7 +205,7 @@ body {
     color: #fff;
     background-color: #139E95;
     text-decoration: none;
-    margin: 0 4px 0 4px;
+    margin: 3px 2px 0 2px;
 }
 
 

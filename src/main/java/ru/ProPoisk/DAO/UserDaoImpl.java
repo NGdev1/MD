@@ -99,38 +99,34 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User[] getAll() {
+    public User[] getAll() throws SQLException {
         String query = "SELECT * FROM `pro_poisk`.`users`";
-        User user = null;
-        ArrayList<User> users = new ArrayList<>();
-
         Connection connection = DbWrapper.getConnection();
 
-        try {
-            ResultSet resultSet = connection.createStatement().executeQuery(query);
-            while (resultSet.next()) {
+        return getUsersFromResultSet(connection.prepareStatement(query).executeQuery());
+    }
 
-                user = new User(
-                        resultSet.getString("login"),
-                        resultSet.getInt("password"),
-                        stringToBoolean(resultSet.getString("gender")),
-                        resultSet.getString("phone"),
-                        resultSet.getString("DOB"),
-                        resultSet.getString("city"),
-                        resultSet.getString("image"),
-                        resultSet.getString("otryad"),
-                        resultSet.getString("email"),
-                        resultSet.getString("surname"),
-                        resultSet.getString("patronymic"),
-                        resultSet.getString("dolshnost")
-                );
-                user.setId(resultSet.getInt("id"));
+    private User[] getUsersFromResultSet(ResultSet resultSet) throws SQLException {
+        ArrayList<User> users = new ArrayList<>();
+        User user;
+        while (resultSet.next()) {
+            user = new User(
+                    resultSet.getString("login"),
+                    resultSet.getInt("password"),
+                    stringToBoolean(resultSet.getString("gender")),
+                    resultSet.getString("phone"),
+                    resultSet.getString("DOB"),
+                    resultSet.getString("city"),
+                    resultSet.getString("image"),
+                    resultSet.getString("otryad"),
+                    resultSet.getString("email"),
+                    resultSet.getString("surname"),
+                    resultSet.getString("patronymic"),
+                    resultSet.getString("dolshnost")
+            );
+            user.setId(resultSet.getInt("id"));
 
-                users.add(user);
-            }
-
-        } catch (SQLException e) {
-            System.out.println("error: " + e.getMessage());
+            users.add(user);
         }
 
         User[] usersArr = new User[users.size()];
@@ -156,7 +152,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void printAll() {
+    public void printAll() throws SQLException {
         User[] users = getAll();
         for (int i = 0; i < users.length; i++) {
             System.out.println(users[i].toString());
@@ -179,6 +175,19 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setInt(7, user.getId());
 
         preparedStatement.execute();
+    }
+
+    @Override
+    public User[] getFriends(int userId) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+
+        String query = "SELECT * FROM pro_poisk.users WHERE id = (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+
+        return getUsersFromResultSet(resultSet);
     }
 
     private boolean stringToBoolean(String s) {

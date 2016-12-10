@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by apple on 18.10.16.
@@ -40,7 +41,12 @@ public class Admin extends HttpServlet {
             }
         }
 
-        User[] users = UserDaoImpl.getInstance().getAll();
+        User[] users = new User[0];
+        try {
+            users = UserDaoImpl.getInstance().getAll();
+        } catch (SQLException e) {
+            System.out.println("Error getting all users: " + e.getMessage());
+        }
         req.setAttribute("Users", users);
 
         getServletConfig().getServletContext().getRequestDispatcher("/admin.ftl").forward(req, resp);

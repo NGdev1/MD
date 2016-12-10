@@ -2,6 +2,8 @@ package ru.ProPoisk.DAO;
 
 import ru.ProPoisk.models.User;
 
+import java.sql.SQLException;
+
 /**
  * Created by apple on 22.08.16.
  */
@@ -14,13 +16,19 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean isRegistered(String userName) {
-        User[] allUsers = myDAO.getAll();
+        User[] allUsers = new User[0];
+        try {
+            allUsers = myDAO.getAll();
+        } catch (SQLException e) {
+            System.out.println("Error getting all users: " + e.getMessage());
+        }
 
         for(User user : allUsers) {
             if (user.getName().equals(userName)) {
                 return true;
             }
         }
+
         return false;
     }
 }

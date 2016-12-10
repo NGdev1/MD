@@ -34,25 +34,12 @@
     </div>
 </div>
 -->
-    <nav role="navigation" class="navbar_messages">
-        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-        </button>
-
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li id="VS"><a href="profile">
-                    <div class="menu_button_text">Все сообщения</div>
-                </a></li>
-                <li id="W"><a href="feed">
-                    <div class="menu_button_text">Важные</div>
-                </a></li>
-            </ul>
-        </div>
-    </nav>
-
 <#include "menu.ftl">
+
+    <div style="position: fixed; top: 90px; left: 1000px;">
+        <a href="#" class="button"><div class="button_text">Все сообщения</div></a>
+        <a href="#" class="button"><div class="button_text">Важные</div></a>
+    </div>
 
     <div class="center-content">
         <div class="container">
