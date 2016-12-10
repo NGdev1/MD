@@ -1,4 +1,4 @@
-package ru.ProPoisk.DAO;
+package ru.ProPoisk.models;
 
 /**
  * Created by apple on 18.08.16.

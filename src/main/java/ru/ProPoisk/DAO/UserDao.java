@@ -1,5 +1,7 @@
 package ru.ProPoisk.DAO;
 
+import ru.ProPoisk.models.User;
+
 import java.sql.SQLException;
 
 /**

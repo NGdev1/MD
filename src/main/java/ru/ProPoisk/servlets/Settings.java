@@ -1,6 +1,6 @@
 package ru.ProPoisk.servlets;
 
-import ru.ProPoisk.DAO.User;
+import ru.ProPoisk.models.User;
 import ru.ProPoisk.DAO.UserDao;
 import ru.ProPoisk.DAO.UserDaoImpl;
 

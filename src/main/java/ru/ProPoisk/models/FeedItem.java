@@ -1,4 +1,6 @@
-package ru.ProPoisk.DAO;
+package ru.ProPoisk.models;
+
+import ru.ProPoisk.DAO.UserDaoImpl;
 
 /**
  * Created by apple on 01.11.16.

@@ -1,7 +1,7 @@
 package ru.ProPoisk.servlets;
 
 import ru.ProPoisk.DAO.FeedItemDao;
-import ru.ProPoisk.DAO.User;
+import ru.ProPoisk.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,5 +1,6 @@
 package ru.ProPoisk.DAO;
 
+import ru.ProPoisk.models.FeedItem;
 import ru.ProPoisk.utils.DbWrapper;
 
 import java.sql.Connection;
