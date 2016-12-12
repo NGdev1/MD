@@ -48,7 +48,7 @@
 
             <div class="divider"></div>
 
-            <form id="new_feed" class="news_item" action="" method="post">
+            <form id="new_feed" action="" method="post">
                 <input name="action" value="new_feed_item" type="hidden">
                 <label>Ваша новость:
                     <textarea id="news_item_text" class="input_green" name="text"></textarea>

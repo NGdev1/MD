@@ -44,12 +44,7 @@ public class UserAuthFilter implements Filter {
         }
 
         if(!allowedRequest){
-            HttpSession session = req.getSession(false);
-
-            if(session == null){
-                resp.sendRedirect("/login");
-                return;
-            }
+            HttpSession session = req.getSession(true);
 
             if(session.getAttribute("user") == null){
                 if(!checkCookie(req.getCookies(), session)) {
