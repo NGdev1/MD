@@ -98,9 +98,24 @@
                 <input class="input_green" type="text" name="phone" placeholder="Название:"/>
                 <input class="input_green" type="text" name="phone" placeholder="Командир:"/>
                 <input class="input_green" type="text" name="phone" placeholder="Зам. Командира"/>
-                <input class="input_green" type="text" name="phone" placeholder="Отряды:"/>
+                    <select id="otryad" class="form-control" name="otryad" multiple="multiple">
+                        <option value="No">Отряд...</option>
+                        <option value="Legion">"Легион" ТИСБИ г. Казань</option>
+                        <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
+                        <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
+                        <option value="SD">"Снежный десант" КФУ г. Казань</option>
+                        <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
+                        <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
+                        <option value="ZF">"Западный Фронт" г. Казань</option>
+                        <option value="PT">"Поисковая тропа" КГЭУ г.Казань</option>
+                        <option value="R">"Разведка" г. Казань</option>
+                        <option value="SKIF">"СКИФ" ТГГПУ г. Казань</option>
+                        <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
+                        <option value="R">"Юные патриоты России" г. Казань</option>
                 <input class="input_green" type="text" name="phone" placeholder="ЗДЕСЬ КАРТА:)"/>
-                <input class="input_green" type="text" name="phone" placeholder="Бойцы:"/>
+                <select id="dolshnost" class="input_green" name="dolshnost" title="">
+                    <option value="No">Участники...</option>
+                    <option value="No">${user.getSurname()}  ${user.getName()}</option>
 
                 <input type="submit" class="button1" value="Добавить"/>
             </form>
