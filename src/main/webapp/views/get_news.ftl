@@ -3,14 +3,14 @@
     <div class="divider"></div>
 </#if>
     <#list feed as feed_item>
-    <div class="news_item">
-        <div class="news_item_text_time">${feed_item.getDateTime()}</div>
-        <div class="news_item_text_author">Автор: ${feed_item.getAuthorName() ! ""}</div>
-        <div class="news_item_text">${feed_item.getText()}</div>
-    </div>
+        <div class="light_blue">${feed_item.getDateTime()}</div>
+        <div>Автор: ${feed_item.getAuthorName() ! ""}</div>
+        <div>${feed_item.getText()}</div>
 
         <#if feed_item_index < feed?size - 1>
         <div class="divider"></div>
         </#if>
     </#list>
+
+    <div style="text-align: center">Всего ${feed?size} записей</div>
 </#if>
