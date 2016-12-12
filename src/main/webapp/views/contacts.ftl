@@ -9,6 +9,7 @@
 
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/contacts.css" rel="stylesheet">
+    <link href="/css/profile.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/massages_menu.css" rel="stylesheet">
 
@@ -30,45 +31,53 @@
 
             <div style="float: right; margin-left: 50px;">
                 <div style="position: fixed">
-                <a href="#" class="button">
-                    <div class="button_text">Друзья</div>
-                </a>
-                <a href="#" class="button">
-                    <div class="button_text">Все</div>
-                </a>
+                    <a href="#" class="button">
+                        <div class="button_text">Друзья</div>
+                    </a>
+                    <a href="#" class="button">
+                        <div class="button_text">Все</div>
+                    </a>
                 </div>
             </div>
 
         <#list Friends as user>
-            <div style="height: 250px;">
-            ${user_index + 1})
-                <div style="height: 0"><img src="../images/no_photo2.png" alt="${user.getName()}"/></div>
-                <div style="font-size: 30px; margin-left: 250px">${user.getName()}
-                </div>
-                <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
-                <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
-                <div style="margin-left: 250px;"> ${user.getCity()}</div>
-                <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Написать сообщение</a>
+            <div style="overflow: hidden">
+                <img class="user-avatar" src="../images/no_photo2.png" alt="${user.getName()}"/>
 
-                <div class="divider"></div>
+                <a class="jetton" href="/user/${user.getId()}">
+                    <div class="user-info" style="font-size: 30px">${user.getName()}</div>
+                    <div class="user-info" style="font-size: 20px">${user.getDOB()}</div>
+                    <div class="user-info" style="font-size: 20px; float: right">${user.getPhoneNumber()}</div>
+                    <div class="user-info"> ${user.getCity()}</div>
+                </a>
+
+
+                <a style="font-size: 15px; float: right; margin-top: 30px" class="button1">Добавить в
+                    контакты</a>
             </div>
+            <div class="divider"></div>
         </#list>
 
             <div style="margin-top: 30px; margin-bottom: 30px" class="title">Поисковики</div>
 
         <#list Users as user>
-            <div style="height: 250px;">
-            ${user_index + 1})
-                <div style="height: 0"><img src="../images/no_photo2.png" alt="${user.getName()}"/></div>
-                <div style="font-size: 30px; margin-left: 250px">${user.getName()}
-                </div>
-                <div style="font-size: 30px; margin-left: 250px"> ${user.getDOB()}</div>
-                <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
-                <div style="margin-left: 250px;"> ${user.getCity()}</div>
-                <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Добавить в друзья</a>
 
-                <div class="divider"></div>
+            <div style="overflow: hidden">
+                <img class="user-avatar" src="../images/no_photo2.png" alt="${user.getName()}"/>
+
+                <a class="jetton" href="/user/${user.getId()}">
+                    <div class="user-info" style="font-size: 30px">${user.getName()}</div>
+                    <div class="user-info" style="font-size: 20px">${user.getDOB()}</div>
+                    <div class="user-info" style="font-size: 20px; float: right">${user.getPhoneNumber()}</div>
+                    <div class="user-info"> ${user.getCity()}</div>
+                </a>
+
+
+                <a style="font-size: 15px; float: right; margin-top: 30px" class="button1">Добавить в
+                    контакты</a>
             </div>
+            <div class="divider"></div>
+
         </#list>
             <div style="text-align: center">На сайте ${Users?size} поисковиков</div>
         </div>

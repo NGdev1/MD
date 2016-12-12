@@ -147,6 +147,7 @@ body {
 
 .title{
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -182,6 +183,20 @@ body {
     font-size: 18px;
 }
 
+.jetton{
+    display: block;
+    color: white;
+    text-shadow: 2px 2px 0 #717171;
+    background-color: darkgray;
+    height: 110px;
+    padding: 10px 30px 20px;
+    margin-bottom: 10px;
+    border-radius: 60px;
+    text-decoration: none;
+    overflow: hidden;
+    border: 5px solid lightgray;
+}
+
 .button_text{
     margin-left: 15px;
     padding-top: 7px;
@@ -190,7 +205,6 @@ body {
 }
 
 .button1 {
-    display: inline-block;
     padding: 6px 12px;
     font-size: 14px;
     font-weight: normal;

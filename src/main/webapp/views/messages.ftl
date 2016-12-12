@@ -36,13 +36,20 @@
 -->
 <#include "menu.ftl">
 
-    <div style="position: fixed; top: 90px; left: 1000px;">
-        <a href="#" class="button"><div class="button_text">Все сообщения</div></a>
-        <a href="#" class="button"><div class="button_text">Важные</div></a>
-    </div>
-
     <div class="center-content">
         <div class="container">
+
+            <div style="float: right; margin-left: 50px;">
+                <div style="position: fixed">
+                    <a href="#" class="button">
+                        <div class="button_text">Все сообщения</div>
+                    </a>
+                    <a href="#" class="button">
+                        <div class="button_text">Важные</div>
+                    </a>
+                </div>
+            </div>
+
             <div class="bubble">привет)) как дела?привет)) как дела?привет)) как дела?привет)) как дела?привет)) как
                 дела?привет)) как дела?привет)) как дела?
             </div>

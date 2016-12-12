@@ -1,8 +1,21 @@
 .user-info{
-    min-width: 65%;
     font-size: 18px;
-    height: 30px;
-    margin-left: 210px;
+    margin: 10px;
+}
+
+.user-info-container{
+    background: white;
+    border: solid 2px lightgray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.user-avatar{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .under-photo{

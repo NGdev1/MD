@@ -120,6 +120,8 @@
                 <input type="submit" class="button1" value="Добавить"/>
             </form>
 
+            <br/>
+            <br/>
             <button onclick="showChangeProfileForm()" class="button1">Профиль</button>
             <button onclick="showChangePasswordForm()" class="button1">Сменить пароль</button>
             <button onclick="showAddExpeditionForm()" class="button1">Добавить экспедицию</button>
