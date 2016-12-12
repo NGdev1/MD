@@ -27,6 +27,18 @@
         <div class="container">
 
             <div class="title">Контакты</div>
+
+            <div style="float: right; margin-left: 50px;">
+                <div style="position: fixed">
+                <a href="#" class="button">
+                    <div class="button_text">Друзья</div>
+                </a>
+                <a href="#" class="button">
+                    <div class="button_text">Все</div>
+                </a>
+                </div>
+            </div>
+
         <#list Friends as user>
             <div style="height: 250px;">
             ${user_index + 1})
@@ -37,6 +49,7 @@
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
                 <div style="margin-left: 250px;"> ${user.getCity()}</div>
                 <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Написать сообщение</a>
+
                 <div class="divider"></div>
             </div>
         </#list>
@@ -53,14 +66,11 @@
                 <div style="font-size: 30px; margin-left: 250px"> ${user.getPhoneNumber()}</div>
                 <div style="margin-left: 250px;"> ${user.getCity()}</div>
                 <a style="font-size: 15px; margin-left: 450px; margin-top: 30px;" class="button1">Добавить в друзья</a>
+
                 <div class="divider"></div>
             </div>
         </#list>
             <div style="text-align: center">На сайте ${Users?size} поисковиков</div>
-        </div>
-        <div style="position: fixed; top: 90px; left: 1000px;">
-            <a href="#" class="button"><div class="button_text">Друзья</div></a>
-            <a href="#" class="button"><div class="button_text">Все</div></a>
         </div>
     </div>
 </div>
