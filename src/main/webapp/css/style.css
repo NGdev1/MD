@@ -191,7 +191,8 @@ body {
     height: 110px;
     padding: 10px 30px 20px;
     margin-bottom: 10px;
-    border-radius: 60px;
+    min-width: 200px;
+    border-radius: 70px;
     text-decoration: none;
     overflow: hidden;
     border: 5px solid lightgray;

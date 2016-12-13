@@ -59,7 +59,9 @@ public class User {
 
     public String getPhoneNumber() {return phoneNumber;}
 
-    public String getDOB() {return DOB;}
+    public String getDOB() {
+        return DOB;
+    }
 
     public String getCity() {return city;}
 

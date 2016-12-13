@@ -80,6 +80,7 @@ public class Register extends HttpServlet {
             }
 
             HttpSession session = req.getSession();
+            user = dao.getUser(username);
             session.setAttribute("user", user);
 
             pw.write("success");

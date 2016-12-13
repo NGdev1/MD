@@ -99,6 +99,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public User[] getAllNoFriends(int userId) throws SQLException {
+        String query = "SELECT * FROM `pro_poisk`.`users` RIGHT OUTER JOIN pro_poisk.friends f ON f.user_id <> ?;";
+        Connection connection = DbWrapper.getConnection();
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, userId);
+
+        return getUsersFromResultSet(statement.executeQuery());
+    }
+
+    @Override
     public User[] getAll() throws SQLException {
         String query = "SELECT * FROM `pro_poisk`.`users`";
         Connection connection = DbWrapper.getConnection();
@@ -181,13 +191,37 @@ public class UserDaoImpl implements UserDao {
     public User[] getFriends(int userId) throws SQLException {
         Connection connection = DbWrapper.getConnection();
 
-        String query = "SELECT * FROM pro_poisk.users WHERE id = (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
+        String query = "SELECT * FROM pro_poisk.users WHERE id IN (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, userId);
 
         ResultSet resultSet = statement.executeQuery();
 
         return getUsersFromResultSet(resultSet);
+    }
+
+    @Override
+    public void addFriend(int userId, int friendId) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+        String query = "INSERT INTO pro_poisk.friends (user_id, friend_id) VALUES (?, ?)";
+
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, userId);
+        statement.setInt(2, friendId);
+
+        statement.executeUpdate();
+    }
+
+    @Override
+    public void removeFriend(int userId, int friendId) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+        String query = "DELETE FROM pro_poisk.friends WHERE user_id = ? AND friend_id = ?";
+
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, userId);
+        statement.setInt(2, friendId);
+
+        statement.executeUpdate();
     }
 
     private boolean stringToBoolean(String s) {
