@@ -100,7 +100,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User[] getAllNoFriends(int userId) throws SQLException {
-        String query = "SELECT * FROM `pro_poisk`.`users` RIGHT OUTER JOIN pro_poisk.friends f ON f.user_id <> ?;";
+        String query = "SELECT * FROM pro_poisk.users WHERE id NOT IN (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
+
         Connection connection = DbWrapper.getConnection();
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, userId);

@@ -5,10 +5,7 @@ import ru.ProPoisk.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -41,6 +38,16 @@ public class Home extends HttpServlet {
 
         if ("logout".equals(req.getParameter("action"))) {
             req.getSession().removeAttribute("user");
+
+            Cookie nameCookie = new Cookie("name", "");
+            nameCookie.setMaxAge(0);
+
+            Cookie passCookie = new Cookie("pass", "");
+            passCookie.setMaxAge(0);
+
+            resp.addCookie(nameCookie);
+            resp.addCookie(passCookie);
+
             resp.sendRedirect("login");
             return;
         }

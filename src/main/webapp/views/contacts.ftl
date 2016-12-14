@@ -13,7 +13,6 @@
     <link href="/css/menu.css" rel="stylesheet">
     <link href="/css/massages_menu.css" rel="stylesheet">
 
-
     <script src="/js/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -33,8 +32,9 @@
 
                     newFriend.hide(animationTime, function () {
                         var friendsList = $('#friends_list');
-                        friendsList.append(newFriend);
+                        friendsList.prepend(newFriend);
 
+                        changeBlockToFriend(newFriend, id);
                         newFriend.show(animationTime);
                     });
                 }
@@ -58,8 +58,9 @@
 
                     friendToDelete.hide(animationTime, function () {
                         var allUsersList = $('#all_users_list');
-                        allUsersList.append(friendToDelete);
+                        allUsersList.prepend(friendToDelete);
 
+                        changeBlockToUser(friendToDelete, id);
                         friendToDelete.show(animationTime);
                     })
                 }
@@ -67,6 +68,33 @@
                     alert(data);
                 }
             });
+        }
+
+        function changeBlockToUser(block, id) {
+            block.find('.removeButton').remove(); //удалить крестик
+
+            block.attr('id', 'AllUsers' + id);
+
+            var addContactButton = block.find('.button1');
+            addContactButton.html('Добавить в контакты');
+            addContactButton.attr("onclick", "addContact(" + id + ")");
+        }
+
+        function changeBlockToFriend(block, id) {
+            var removeContactButton = $('<button/>');
+
+            removeContactButton.addClass("removeButton");
+            removeContactButton.html("x");
+            removeContactButton.on("click", function () {
+               removeContact(id);
+            });
+
+            block.prepend(removeContactButton);
+            block.attr('id', 'Friend' + id);
+
+            var writeMessageButton = block.find('.button1');
+            writeMessageButton.html('Написать сообщение');
+            writeMessageButton.attr("onclick", "");
         }
     </script>
 </head>
@@ -83,7 +111,7 @@
 
             <div class="title">Контакты</div>
 
-            <div style="float: right; margin-left: 50px;">
+            <div style="float: right; margin-right: -30px; background-color: white;">
                 <div style="position: fixed">
                     <a href="#" class="button">
                         <div class="button_text">Друзья</div>
@@ -97,21 +125,21 @@
             <div id="friends_list">
             <#list Friends as user>
                 <div id="Friend${user.getId()}">
+                    <button class="removeButton" onclick="removeContact(${user.getId()})">x</button>
                     <div style="overflow: hidden">
-                        <div style="height: 0"><button style="margin: 0; float:right; font-size: 20px; background: none; border: none;" onclick="removeContact(${user.getId()})">x</button></div>
-
                         <img class="user-avatar" src="../images/no_photo2.png" alt="${user.getName()}"/>
 
                         <a class="jetton" href="/user/${user.getId()}">
                             <div class="user-info" style="font-size: 30px">${user.getName()}</div>
                             <div class="user-info" style="font-size: 20px">${user.getDOB()}</div>
-                            <div class="user-info" style="font-size: 20px; float: right">${user.getPhoneNumber()}</div>
+                            <div class="user-info"
+                                 style="font-size: 20px; float: right">${user.getPhoneNumber()}</div>
                             <div class="user-info"> ${user.getCity()}</div>
                         </a>
 
-                        <button style="font-size: 15px; float: right; margin-top: 30px"
-                                class="button1">Написать сообщение
-                        </button>
+                        <div style="float: right">
+                            <button class="button1">Написать сообщение</button>
+                        </div>
                     </div>
                     <div class="divider"></div>
                 </div>
@@ -133,10 +161,9 @@
                             <div class="user-info"> ${user.getCity()}</div>
                         </a>
 
-                        <button onclick="addContact(${user.getId()})"
-                                style="font-size: 15px; float: right; margin-top: 30px" class="button1">Добавить в
-                            контакты
-                        </button>
+                        <div style="float: right">
+                            <button onclick="addContact(${user.getId()})" class="button1">Добавить в контакты</button>
+                        </div>
                     </div>
                     <div class="divider"></div>
                 </div>

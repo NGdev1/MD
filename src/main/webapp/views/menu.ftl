@@ -13,8 +13,6 @@
             <li id="nws"><a href="/feed"><div class="button_text">Новости</div></a></li>
             <li id="im"><a href="/im"><div class="button_text">Сообщения</div></a></li>
             <li id="con"><a href="/contacts"><div class="button_text">Контакты</div></a></li>
-            <li id="gal"><a href="/gallery"><div class="button_text">Галерея</div></a></li>
-            <li id="mus"><a href="/music"><div class="button_text">Музыка</div></a></li>
             <li id="ful"><a href="/full_map"><div class="button_text">Full Map</div></a></li>
             <li id="ful"><a href="/full_map"><div class="button_text">Экспедиции</div></a></li>
             <li id="id"><a href="/settings"><div class="button_text">Настройки</div></a></li>

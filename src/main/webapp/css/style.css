@@ -191,7 +191,7 @@ body {
     height: 110px;
     padding: 10px 30px 20px;
     margin-bottom: 10px;
-    min-width: 200px;
+    min-width: 250px;
     border-radius: 70px;
     text-decoration: none;
     overflow: hidden;
@@ -265,5 +265,13 @@ body {
 
 .text{
     margin-bottom: 7px;
+}
+
+.removeButton{
+    margin: 0;
+    float:right;
+    font-size: 18px;
+    background: none;
+    border: none;
 }
 

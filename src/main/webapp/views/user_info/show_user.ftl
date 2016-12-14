@@ -39,9 +39,10 @@
     <div class="center-content">
         <div class="container">
 
+            <div class="title">Профиль</div>
 
         <div class="user-info-container">
-            <div class="title">Профиль</div>
+
 
         <#if userInfo??>
             <img class="user-avatar" src="/images/no_photo2.png"/>
