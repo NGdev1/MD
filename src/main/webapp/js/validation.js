@@ -14,20 +14,24 @@ $(document).ready(function () {
                 } else {
                     $(this).addClass("empty-field")
                 }
-            })
+            });
         }
         
         function lightEmpty(interval) {
             var emptyFields = form.find('.empty-field');
 
-            emptyFields.css({
+            lightField(emptyFields, interval)
+        }
+
+        function lightField(field, interval){
+            field.css({
                 'border-color' : 'red',
                 'border-width' : '1px',
                 'box-shadow' : 'inset 0px 0px 5px rgba(100, 0, 0, 70)'
             });
 
             setTimeout(function () {
-                emptyFields.removeAttr('style')
+                field.removeAttr('style')
             }, interval)
         }
 
@@ -40,7 +44,7 @@ $(document).ready(function () {
         function checkOther(){
             var phone = $('input[name=phone]');
             if( ! isValidPhone(phone.val())){
-                phone.appendChild("Не верный телефон");
+                lightField(phone, 600);
                 return false;
             }
 
@@ -62,7 +66,7 @@ $(document).ready(function () {
                         type: "POST",
                         data: {
                             "name" : $('input[name=name]').val(),
-                            "image" : "picture",
+                            "image" : "no",
                             "phone" : $('input[name=phone]').val(),
                             "password" : $('input[name=password]').val(),
                             "password2" : $('input[name=password2]').val(),
@@ -81,7 +85,8 @@ $(document).ready(function () {
                             }, 500);
 
                         } else {
-                            alert(data)
+                            var message = JSON.parse(data);
+                            alert(message[0]);
                         }
                     });
                 }

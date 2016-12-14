@@ -1,5 +1,6 @@
 package ru.ProPoisk.utils;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,33 +14,33 @@ import java.util.regex.Pattern;
 public class FormDataCheck {
     private FormDataCheck(){
     }
-    public static TreeMap<String, String> checkAllFieldsAndGetErrorMessageIfFieldsAreInvalid(String fullName, String phoneNumber, String DOB, String password1, String password2, String gender, String city){
-        TreeMap<String, String> errorMessage = new TreeMap<>();
+    public static ArrayList<String> checkAllFields(String fullName, String phoneNumber, String DOB, String password1, String password2, String gender, String city){
+        ArrayList<String> errorMessage = new ArrayList<>();
 
         if(fullName == null){
-            errorMessage.put("error", "\nНе верное имя");
+            errorMessage.add("Не верное имя");
         }
 
         if(!checkDOB(DOB)){
-            errorMessage.put("error", "\nНе верная дата");
+            errorMessage.add("Не верная дата");
         }
 
         if (!checkPhoneNumber(phoneNumber)){
-            errorMessage.put("error", "\nНе верный номер телефона");
+            errorMessage.add("Не верный номер телефона");
         }
         if (!checkPassword(password1)){
-            errorMessage.put("error", "\nНе верный пароль");
+            errorMessage.add("Не верный пароль");
         }
         else{
             if (!password1.equals(password2)){
-                errorMessage.put("error", "\nНе верный повтор пароля");
+                errorMessage.add("Не верный повтор пароля");
             }
         }
         if (!checkGender(gender)){
-            errorMessage.put("error", "\nПол не указан");
+            errorMessage.add("Пол не указан");
         }
         if (!checkCity(city)){
-            errorMessage.put("error", "\nГород не указан");
+            errorMessage.add("Город не указан");
         }
 
         return errorMessage;

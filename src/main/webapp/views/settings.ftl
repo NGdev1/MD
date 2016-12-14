@@ -9,7 +9,6 @@
 
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/menu.css" rel="stylesheet">
-    <link href="/css/news_item.css" rel="stylesheet">
     <link href="/css/singin.css" rel="stylesheet">
     <link href="/css/profile.css" rel="stylesheet">
     <link href="/css/fullmap.css" rel="stylesheet">
@@ -18,25 +17,25 @@
     <script src="/js/jquery.min.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#dolshnost option[value=${user.getDolshnost()}]').prop('selected', 'true');
         });
 
         var toggleTime = 400;
 
-        function showChangePasswordForm(){
+        function showChangePasswordForm() {
             $('#change_profile_form').hide(toggleTime);
             $('#add_expedition_form').hide(toggleTime);
             $('#change_password_form').show(toggleTime);
         }
 
-        function showChangeProfileForm(){
+        function showChangeProfileForm() {
             $('#add_expedition_form').hide(toggleTime);
             $('#change_password_form').hide(toggleTime);
             $('#change_profile_form').show(toggleTime);
         }
 
-        function showAddExpeditionForm(){
+        function showAddExpeditionForm() {
             $('#change_profile_form').hide(toggleTime);
             $('#change_password_form').hide(toggleTime);
             $('#add_expedition_form').show(toggleTime);
@@ -95,27 +94,37 @@
             <form id="add_expedition_form" class="news_item" action="/settings" method="post" style="display: none">
                 <div class="title">Добавить экспедицию</div>
 
-                <input class="input_green" type="text" name="phone" placeholder="Название:"/>
-                <input class="input_green" type="text" name="phone" placeholder="Командир:"/>
-                <input class="input_green" type="text" name="phone" placeholder="Зам. Командира"/>
-                    <select id="otryad" class="form-control" name="otryad" multiple="multiple">
-                        <option value="No">Отряд...</option>
-                        <option value="Legion">"Легион" ТИСБИ г. Казань</option>
-                        <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
-                        <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
-                        <option value="SD">"Снежный десант" КФУ г. Казань</option>
-                        <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
-                        <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
-                        <option value="ZF">"Западный Фронт" г. Казань</option>
-                        <option value="PT">"Поисковая тропа" КГЭУ г.Казань</option>
-                        <option value="R">"Разведка" г. Казань</option>
-                        <option value="SKIF">"СКИФ" ТГГПУ г. Казань</option>
-                        <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
-                        <option value="R">"Юные патриоты России" г. Казань</option>
-                <input class="input_green" type="text" name="phone" placeholder="ЗДЕСЬ КАРТА:)"/>
+                <input class="input_green" type="text" name="name" placeholder="Название:"/>
+                <input class="input_green" type="text" name="komandor" placeholder="Командир:"/>
+                <input class="input_green" type="text" name="zam" placeholder="Зам. Командира"/>
+
+                <!--select id="otryad" style="height: 260px" class="input_green" name="otryad" multiple="multiple" title="">
+                    <option value="Legion">"Легион" ТИСБИ г. Казань</option>
+                    <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
+                    <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
+                    <option value="SD">"Снежный десант" КФУ г. Казань</option>
+                    <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
+                    <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
+                    <option value="ZF">"Западный Фронт" г. Казань</option>
+                    <option value="PT">"Поисковая тропа" КГЭУ г.Казань</option>
+                    <option value="R">"Разведка" г. Казань</option>
+                    <option value="SKIF">"СКИФ" ТГГПУ г. Казань</option>
+                    <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
+                    <option value="R">"Юные патриоты России" г. Казань</option>
+                </select-->
+
+                <div id="squads_container">
+
+                </div>
+                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
+
+                <input class="input_green" type="text" name="place" placeholder="место проведения экспедиции"/>
+
                 <select id="dolshnost" class="input_green" name="dolshnost" title="">
                     <option value="No">Участники...</option>
-                    <option value="No">${user.getSurname()}  ${user.getName()}</option>
+                    <option value="No">${user.getSurname()}  ${user.getName()}
+                    </option>
+                </select>
 
                 <input type="submit" class="button1" value="Добавить"/>
             </form>
@@ -125,7 +134,31 @@
             <button onclick="showChangeProfileForm()" class="button1">Профиль</button>
             <button onclick="showChangePasswordForm()" class="button1">Сменить пароль</button>
             <button onclick="showAddExpeditionForm()" class="button1">Добавить экспедицию</button>
-            <button class="button1">Настройки сообщений</button>
         </div>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[name=squads]').keypress(function (e) {
+                var input = $('input[name=squads]');
+                //input.val(input.val() + e.key + e.key)
+
+                $.ajax({
+                    url: "/getJson?action=get_squads&query=" + input.val()
+                }).done(function (data) {
+                    $('#squads_container').html('');
+
+                    var result = JSON.parse(data);
+
+                    for(var i = 0; i < result.length; i++){
+                        var line = $('<div/>',{
+                            text: result[i].name
+                        });
+
+                        $('#squads_container').prepend(line);
+                    }
+                });
+            });
+        });
+    </script>
 </body>

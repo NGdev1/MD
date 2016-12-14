@@ -2497,8 +2497,22 @@
     <table name="feed" schema="" catalog="pro_poisk" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="author_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="text" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
+      <column name="text" sqlType="VARCHAR" precision="10000" scale="0" nullable="false" jdbcType="12"/>
       <column name="date_time" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="feed_users_id_fk" columns="author_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="feed_users_id_fk" unique="false" columns="author_id"/>
+    </table>
+    <table name="friends" schema="" catalog="pro_poisk" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="friend_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="user_id,friend_id"/>
+      <foreign-key name="friends_ibfk_1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="friends_ibfk_2" columns="friend_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="squads" schema="" catalog="pro_poisk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="users" schema="" catalog="pro_poisk" type="TABLE">
@@ -2509,14 +2523,16 @@
       <column name="phone" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="DOB" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <column name="city" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="image" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="friends" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="image" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
       <column name="otryad" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="patronymic" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="surname" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="dolshnost" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="feed_users_id_fk" table="feed" schema="" catalog="pro_poisk" columns="author_id"/>
+      <exported-key name="friends_ibfk_1" table="friends" schema="" catalog="pro_poisk" columns="user_id"/>
+      <exported-key name="friends_ibfk_2" table="friends" schema="" catalog="pro_poisk" columns="friend_id"/>
       <index name="id" unique="false" columns="id"/>
     </table>
     <table name="host_summary" schema="" catalog="sys" type="VIEW">

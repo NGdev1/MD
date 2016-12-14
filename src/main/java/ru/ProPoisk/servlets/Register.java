@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
@@ -63,7 +64,7 @@ public class Register extends HttpServlet {
         String patronymic = req.getParameter("patronymic");
         String dolshnost = req.getParameter("dolshnost");
 
-        TreeMap message = FormDataCheck.checkAllFieldsAndGetErrorMessageIfFieldsAreInvalid(username, phone, DOB, password, password2, sex, city);
+        ArrayList message = FormDataCheck.checkAllFields(username, phone, DOB, password, password2, sex, city);
 
         PrintWriter pw = resp.getWriter();
 

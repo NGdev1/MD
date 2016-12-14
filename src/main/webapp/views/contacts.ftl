@@ -113,10 +113,10 @@
 
             <div style="float: right; margin-right: -30px; background-color: white;">
                 <div style="position: fixed">
-                    <a href="#" class="button">
+                    <a href="#friends_list" class="button">
                         <div class="button_text">Друзья</div>
                     </a>
-                    <a href="#" class="button">
+                    <a href="#all_users_list" class="button">
                         <div class="button_text">Все</div>
                     </a>
                 </div>

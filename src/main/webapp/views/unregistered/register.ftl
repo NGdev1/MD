@@ -24,8 +24,7 @@
     <form class="form-center-content" action="/register" method="post">
         <div class="form-signin-heading">Регистрация</div>
 
-        <input class="form-control" type="text" name="name" placeholder="Имя (Логин)"/>
-        <div class="error_message" id="message" style="display: none">Введите имя</div>
+        <input class="form-control" type="text" name="name" placeholder="Имя"/>
 
         <input class="form-control" type="text" name="surname" placeholder="Фамилия"/>
 
@@ -34,9 +33,7 @@
         <input class="form-control" type="text" name="mail" placeholder="@Mail, для обратной связи"/>
 
         <input class="form-control" type="text" name="phone" placeholder="Номер телефона"/>
-
-        <label for="image">Фото</label>
-        <input class="form-control" id="image" name="image" type="file"/>
+        
 
         <input class="form-control" type="password" name="password" placeholder="Пароль"/>
         <input class="form-control" type="password" name="password2" placeholder="Повторите пароль"/>
@@ -45,8 +42,8 @@
         <input id="DOB" class="form-control" type="date" name="DOB" placeholder="Дата рождения"/>
 
         <div>Город:</div>
-        <select id="city" class="form-control" name="city">
-            <option value="No">Город...</option>
+        <select id="city" class="form-control" name="city" title="">
+            <option value="">Город...</option>
             <option value="Kazan">Казань</option>
             <option value="Moscow">Москва</option>
             <option value="Spb">Санкт-Петербург</option>
@@ -56,8 +53,8 @@
 
 
         <div>Отряд:</div>
-        <select id="otryad" class="form-control" name="otryad">
-            <option value="No">Отряд...</option>
+        <select id="otryad" class="form-control" name="otryad" title="">
+            <option value="">Отряд...</option>
             <option value="Legion">"Легион" ТИСБИ г. Казань</option>
             <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
             <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
@@ -72,7 +69,6 @@
             <option value="R">"Юные патриоты России" г. Казань</option>
         </select>
 
-
         <div>Пол:</div>
         <div class="radio-group">
             <span>Мужской</span>
@@ -80,9 +76,6 @@
             <span>Женский</span>
             <input type="radio" placeholder="Пол" name="sex" value="female"/>
         </div>
-
-        <label for="save">Запомнить меня</label>
-        <input id="save" type="checkbox" name="save" checked="checked"/>
 
         <div id="error" class="text-danger"></div>
 
