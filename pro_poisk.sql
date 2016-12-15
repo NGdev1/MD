@@ -7,18 +7,18 @@
 --
 -- Table structure for table `feed`
 --
-
+DROP TABLE IF EXISTS `friends`;
 DROP TABLE IF EXISTS `feed`;
+DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `feed` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author_id` int(11) NOT NULL,
   `text` varchar(10000) NOT NULL,
   `date_time` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `feed_users_id_fk` (`author_id`),
-  CONSTRAINT `feed_users_id_fk` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `feed_users_id_fk` (`author_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `feed`
@@ -34,14 +34,11 @@ UNLOCK TABLES;
 -- Table structure for table `friends`
 --
 
-DROP TABLE IF EXISTS `friends`;
 CREATE TABLE `friends` (
   `user_id` int(11) NOT NULL,
   `friend_id` int(11) NOT NULL,
   PRIMARY KEY (`user_id`,`friend_id`),
-  KEY `friend_id` (`friend_id`),
-  CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `friend_id` (`friend_id`)
 ) ENGINE=InnoDB;
 
 --
@@ -79,7 +76,6 @@ UNLOCK TABLES;
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) NOT NULL,
@@ -108,6 +104,12 @@ INSERT INTO `users` VALUES (28,'Михаил',1450572480,1,'89520340416','2016-1
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
+ALTER TABLE feed
+ADD CONSTRAINT `feed_users_id_fk` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE friends
+  ADD   CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 --
 -- Dumping events for database 'pro_poisk'
 --

@@ -1,6 +1,7 @@
 package ru.ProPoisk.DAO;
 
 import ru.ProPoisk.models.Squad;
+import ru.ProPoisk.models.User;
 import ru.ProPoisk.utils.DbWrapper;
 
 import java.sql.Connection;
@@ -32,6 +33,31 @@ public class SquadsDaoImpl implements SquadsDao {
         Connection connection = DbWrapper.getConnection();
         String query = "SELECT * FROM pro_poisk.squads WHERE name LIKE '%" + q + "%';";
         return getSquadsFromResultSet(connection.createStatement().executeQuery(query));
+    }
+
+    @Override
+    public String getSquadName(int id) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.squads WHERE id=?;";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, id);
+
+        ResultSet resultSet = statement.executeQuery();
+        if(resultSet.next()){
+            return resultSet.getString("name");
+        } else {
+            return "";
+        }
+    }
+
+    private Squad getSquadFromResultSet(ResultSet resultSet) throws SQLException {
+        if(resultSet.next()) {
+            return new Squad(
+                    resultSet.getInt("id"),
+                    resultSet.getString("name")
+            );
+        }
+        else return null;
     }
 
     private List<Squad> getSquadsFromResultSet(ResultSet resultSet) throws SQLException {

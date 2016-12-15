@@ -113,10 +113,12 @@
                     <option value="R">"Юные патриоты России" г. Казань</option>
                 </select-->
 
-                <div id="squads_container">
+                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
+                <div style="height: 0;">
+                <div id="squads_container" class="offer_list">
 
                 </div>
-                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
+                </div>
 
                 <input class="input_green" type="text" name="place" placeholder="место проведения экспедиции"/>
 
@@ -139,12 +141,11 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('input[name=squads]').keypress(function (e) {
-                var input = $('input[name=squads]');
-                //input.val(input.val() + e.key + e.key)
+            var inputSquads = $('input[name=squads]');
 
+            inputSquads.keyup(function (e) {
                 $.ajax({
-                    url: "/getJson?action=get_squads&query=" + input.val()
+                    url: "/getJson?action=get_squads&query=" + inputSquads.val()
                 }).done(function (data) {
                     $('#squads_container').html('');
 

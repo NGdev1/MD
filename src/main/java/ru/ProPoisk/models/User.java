@@ -1,5 +1,10 @@
 package ru.ProPoisk.models;
 
+import ru.ProPoisk.DAO.SquadsDao;
+import ru.ProPoisk.DAO.SquadsDaoImpl;
+
+import java.sql.SQLException;
+
 /**
  * Created by apple on 18.08.16.
  */
@@ -13,13 +18,13 @@ public class User {
     private String DOB;
     private String city;
     private String imageB64;
-    private String otryad;
+    private int squad;
     private String email;
     private String surname;
     private String patronymic;
     private String dolshnost;
 
-    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email, String surname, String patronymic, String dolshnost) {
+    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, int squad, String email, String surname, String patronymic, String dolshnost) {
         this.name = name;
         this.password = password.hashCode();
         this.isMale = isMale;
@@ -27,14 +32,14 @@ public class User {
         this.DOB = DOB;
         this.city = city;
         this.imageB64 = imageB64;
-        this.otryad = otryad;
+        this.squad = squad;
         this.email = email;
         this.surname = surname;
         this.patronymic = patronymic;
         this.dolshnost = dolshnost;
     }
 
-    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, String otryad, String email, String surname, String patronymic, String dolshnost) {
+    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, int squad, String email, String surname, String patronymic, String dolshnost) {
         this.name = name;
         this.password = passwordHash;
         this.isMale = isMale;
@@ -42,7 +47,7 @@ public class User {
         this.DOB = DOB;
         this.city = city;
         this.imageB64 = imageB64;
-        this.otryad = otryad;
+        this.squad = squad;
         this.email = email;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -65,10 +70,18 @@ public class User {
 
     public String getCity() {return city;}
 
-    public String getOtryad() {return otryad;}
+    public int getSquad() {return squad;}
 
     public String getEmail() {
         return email;
+    }
+
+    public String getOtryad(){
+        try {
+            return SquadsDaoImpl.getInstance().getSquadName(this.getSquad());
+        } catch (SQLException e) {
+            return "";
+        }
     }
 
     public String getSurname() {return surname;}
@@ -85,7 +98,7 @@ public class User {
 
     public void setCity(String city) {this.city = city;}
 
-    public void setOtryad(String otryad) {this.otryad = otryad;}
+    public void setSquad(int squad) {this.squad = squad;}
 
     public void setEmail(String email) {this.email = email;}
 
@@ -128,7 +141,7 @@ public class User {
     @Override
     public String toString() {
         return "Имя: " + name + "; id: " + Integer.toString(id) + "; Пол: " + Boolean.toString(isMale) +
-                "; number: " + getPhoneNumber() + "; город: " + city + "; Дата рождения: " + DOB + "; Отряд: " + otryad
+                "; number: " + getPhoneNumber() + "; город: " + city + "; Дата рождения: " + DOB + "; Отряд: " + squad
                 + "; email " + email + "; Фамилия " + surname + "; Отчество " + patronymic + "; Должность " + dolshnost;
     }
 }

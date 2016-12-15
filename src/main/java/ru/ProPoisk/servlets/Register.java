@@ -58,7 +58,13 @@ public class Register extends HttpServlet {
         String DOB = req.getParameter("DOB");
         String city = req.getParameter("city");
         String sex = req.getParameter("sex");
-        String otryad = req.getParameter("otryad");
+        int squad;
+        try {
+            squad = Integer.parseInt(
+                    req.getParameter("otryad"));
+        } catch (Exception e) {
+            squad = 1;
+        }
         String email = req.getParameter("email");
         String surname = req.getParameter("surname");
         String patronymic = req.getParameter("patronymic");
@@ -70,7 +76,7 @@ public class Register extends HttpServlet {
 
         if (message.isEmpty()) { //No errors
             boolean isMale = sex.equals("male");
-            User user = new User(username, password, isMale, phone, DOB, city, image, otryad, email, surname, patronymic, dolshnost);
+            User user = new User(username, password, isMale, phone, DOB, city, image, squad, email, surname, patronymic, dolshnost);
             try {
                 dao.saveUser(user);
             } catch (SQLException e) {

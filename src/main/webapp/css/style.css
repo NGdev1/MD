@@ -275,3 +275,10 @@ body {
     border: none;
 }
 
+.offer_list{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    z-index: 100;
+}
+
