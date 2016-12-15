@@ -113,11 +113,16 @@
                     <option value="R">"Юные патриоты России" г. Казань</option>
                 </select-->
 
-                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
-                <div style="margin-top: -10px; height: 0">
-                <div id="squads_container" class="offer_list">
+                <div id="squads_container">
 
                 </div>
+
+                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
+
+                <div style="margin-top: -10px; height: 0">
+                    <div id="squads_offer_list_container" class="offer_list">
+
+                    </div>
                 </div>
 
                 <input class="input_green" type="text" name="place" placeholder="место проведения экспедиции"/>
@@ -140,14 +145,25 @@
     </div>
 
     <script type="text/javascript">
+        function addSquad(id, name) {
+            var containerSquads = $('#squads_container');
+
+            var squad = $('<div/>', {
+                text: name,
+                squadId: id
+            });
+
+            containerSquads.prepend(squad);
+        }
+
         $(document).ready(function () {
             var inputSquads = $('input[name=squads]');
-            var listSquads = $('#squads_container');
+            var listSquads = $('#squads_offer_list_container');
 
             listSquads.hide();
 
             function updateListSquads() {
-                if(inputSquads.val() == '') {
+                if (inputSquads.val() == '') {
                     hideListSquads();
                     return;
                 }
@@ -160,23 +176,24 @@
                     var result = JSON.parse(data);
                     var needToShow = false;
 
-                    if(result.length == 0){
+                    if (result.length == 0) {
                         listSquads.hide(500);
                         return;
-                    } else if(listSquads.html() == '') {
+                    } else if (listSquads.html() == '') {
                         needToShow = true;
                     }
 
-                    for(var i = 0; i < result.length; i++){
-                        var line = $('<div/>',{
+                    for (var i = 0; i < result.length; i++) {
+                        var line = $('<div/>', {
                             text: result[i].name,
-                            class: 'offer_list_item'
+                            onclick: 'addSquad(' + result[i].id + ',\'' + result[i].name + '\')',
+                            'class': 'offer_list_item'
                         });
 
                         listSquads.prepend(line);
                     }
 
-                    if(needToShow){
+                    if (needToShow) {
                         listSquads.show(700);
                     }
                 });
@@ -185,10 +202,6 @@
             function hideListSquads() {
                 listSquads.hide(400);
             }
-
-//            inputSquads.focusin(function (e) {
-//                updateListSquads();
-//            });
 
             inputSquads.focusout(function (e) {
                 hideListSquads();
