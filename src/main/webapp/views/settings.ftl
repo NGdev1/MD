@@ -114,7 +114,7 @@
                 </select-->
 
                 <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
-                <div style="height: 0;">
+                <div style="margin-top: -10px; height: 0">
                 <div id="squads_container" class="offer_list">
 
                 </div>
@@ -142,23 +142,61 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var inputSquads = $('input[name=squads]');
+            var listSquads = $('#squads_container');
 
-            inputSquads.keyup(function (e) {
+            listSquads.hide();
+
+            function updateListSquads() {
+                if(inputSquads.val() == '') {
+                    hideListSquads();
+                    return;
+                }
+
                 $.ajax({
                     url: "/getJson?action=get_squads&query=" + inputSquads.val()
                 }).done(function (data) {
-                    $('#squads_container').html('');
+                    listSquads.html('');
 
                     var result = JSON.parse(data);
+                    var needToShow = false;
+
+                    if(result.length == 0){
+                        listSquads.hide(500);
+                        return;
+                    } else if(listSquads.html() == '') {
+                        needToShow = true;
+                    }
 
                     for(var i = 0; i < result.length; i++){
                         var line = $('<div/>',{
-                            text: result[i].name
+                            text: result[i].name,
+                            class: 'offer_list_item'
                         });
 
-                        $('#squads_container').prepend(line);
+                        listSquads.prepend(line);
+                    }
+
+                    if(needToShow){
+                        listSquads.show(700);
                     }
                 });
+            }
+
+            function hideListSquads() {
+                listSquads.hide(400);
+            }
+
+//            inputSquads.focusin(function (e) {
+//                updateListSquads();
+//            });
+
+            inputSquads.focusout(function (e) {
+                hideListSquads();
+                inputSquads.val('');
+            });
+
+            inputSquads.keyup(function (e) {
+                updateListSquads();
             });
         });
     </script>
