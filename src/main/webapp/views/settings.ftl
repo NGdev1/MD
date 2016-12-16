@@ -145,7 +145,31 @@
     </div>
 
     <script type="text/javascript">
+        var squads = [];
+
+        function find(array, value) {
+
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] == value) return i;
+            }
+
+            return -1;
+        }
+
+        function removeSquad(id) {
+            delete squads[find(squads, id)];
+
+            console.log(squads);
+
+            var containerSquads = $('#squads_container');
+            containerSquads.find('div[squadid=' + id + ']').hide(100);
+        }
+
         function addSquad(id, name) {
+            if(find(squads, id) != -1) return;
+
+            squads.push(id);
+
             var containerSquads = $('#squads_container');
 
             var squad = $('<div/>', {
@@ -153,6 +177,18 @@
                 squadId: id
             });
 
+            var removeButton = $('<button/>', {
+                'class': 'removeButton',
+                'onclick': 'removeSquad(' + id + ')',
+                'type': 'button',
+                text: 'x'
+            });
+
+//            removeButton.on("click", function(e) {
+//                removeSquad(id);
+//            });
+
+            squad.prepend(removeButton);
             containerSquads.prepend(squad);
         }
 
