@@ -1,6 +1,5 @@
 package ru.ProPoisk.models;
 
-import ru.ProPoisk.DAO.SquadsDao;
 import ru.ProPoisk.DAO.SquadsDaoImpl;
 
 import java.sql.SQLException;
@@ -17,21 +16,21 @@ public class User {
     private String phoneNumber;
     private String DOB;
     private String city;
-    private String imageB64;
+    private String image;
     private int squad;
     private String email;
     private String surname;
     private String patronymic;
     private String dolshnost;
 
-    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, int squad, String email, String surname, String patronymic, String dolshnost) {
+    public User(String name, String password, boolean isMale, String phoneNumber, String DOB, String city, String image, int squad, String email, String surname, String patronymic, String dolshnost) {
         this.name = name;
         this.password = password.hashCode();
         this.isMale = isMale;
         this.phoneNumber = phoneNumber;
         this.DOB = DOB;
         this.city = city;
-        this.imageB64 = imageB64;
+        this.image = image;
         this.squad = squad;
         this.email = email;
         this.surname = surname;
@@ -39,14 +38,14 @@ public class User {
         this.dolshnost = dolshnost;
     }
 
-    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String imageB64, int squad, String email, String surname, String patronymic, String dolshnost) {
+    public User(String name, int passwordHash, boolean isMale, String phoneNumber, String DOB, String city, String image, int squad, String email, String surname, String patronymic, String dolshnost) {
         this.name = name;
         this.password = passwordHash;
         this.isMale = isMale;
         this.phoneNumber = phoneNumber;
         this.DOB = DOB;
         this.city = city;
-        this.imageB64 = imageB64;
+        this.image = image;
         this.squad = squad;
         this.email = email;
         this.surname = surname;
@@ -90,7 +89,7 @@ public class User {
 
     public String getDolshnost() {return dolshnost;}
 
-    public String getImageB64() {return imageB64;}
+    public String getImage() {return image;}
 
     public int getId() {return id;}
 
@@ -122,8 +121,8 @@ public class User {
         this.DOB = DOB;
     }
 
-    public void setImageB64(String imageB64) {
-        this.imageB64 = imageB64;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public void setPhoneNumber(String phoneNumber) {

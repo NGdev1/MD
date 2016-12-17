@@ -1,6 +1,7 @@
 .user-info{
     font-size: 18px;
     margin: 10px;
+    width: auto;
 }
 
 .user-info-container{
@@ -18,16 +19,14 @@
     margin-bottom: 20px;
 }
 
+.user-avatar-center{
+    display: block;
+    margin: 10px auto 20px auto;
+}
+
 .under-photo{
     width: 80%;
     margin-left: 0;
-}
-
-.user-info-settings {
-    margin-left: 210px;
-    min-width: 65%;
-    font-size: 18px;
-    margin-bottom: 20px;
 }
 
 .user-info-settings-under-photo{

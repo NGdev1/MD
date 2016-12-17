@@ -19,4 +19,5 @@ public interface UserDao {
     User[] getFriends(int userId) throws SQLException;
     void addFriend(int userId, int friendId) throws SQLException;
     void removeFriend(int userId, int friendId) throws SQLException;
+    User[] getArrayBySearch(String q) throws SQLException;
 }

@@ -15,6 +15,7 @@
 
 
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/settings.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -52,31 +53,38 @@
 
             <form id="change_profile_form" class="news_item" action="/settings" method="post">
                 <div class="title">Настройки профиля</div>
-                <div style="height: 0"><img src="../images/no_photo2.png"/></div>
+                <div class="user-info-container">
+                    <img class="user-avatar-center" src="${user.getImage()}"/>
 
-                <input name="action" value="change_profile" type="hidden">
-                <input placeholder="Имя:"
-                       class="input_green user-info-settings" name="login" value="${user.getName()}"/>
+                    <input name="action" value="change_profile" type="hidden">
 
-                <input placeholder="Фамилия:"
-                       class="input_green user-info-settings" name="surname" value="${user.getSurname()}"/>
+                    <div class="user-info-text">
+                        <input placeholder="Имя:"
+                               class="input_green" name="login" value="${user.getName()}"/>
 
-                <input placeholder="Отчество:"
-                       class="input_green user-info-settings" name="patronymic" value="${user.getPatronymic()}"/>
+                        <input placeholder="Фамилия:"
+                               class="input_green" name="surname" value="${user.getSurname()}"/>
 
-                <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
-                       value="${user.getPhoneNumber()}"/>
+                        <input placeholder="Отчество:"
+                               class="input_green" name="patronymic"
+                               value="${user.getPatronymic()}"/>
 
-                <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
+                        <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
+                               value="${user.getPhoneNumber()}"/>
 
-                <select id="dolshnost" class="input_green" name="dolshnost" title="">
-                    <option value="No">Должность...</option>
-                    <option value="Kom">"Командир"</option>
-                    <option value="ZKom">"Зам. Ком."</option>
-                    <option value="ZSklad">"Зав.Складом"</option>
-                    <option value="NProd">"Нач.Прод."</option>
-                    <option value="S">"Боец"</option>
-                </select>
+                        <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
+
+                        <select id="dolshnost" class="input_green" name="dolshnost" title="">
+                            <option value="No">Должность...</option>
+                            <option value="Kom">"Командир"</option>
+                            <option value="ZKom">"Зам. Ком."</option>
+                            <option value="ZSklad">"Зав.Складом"</option>
+                            <option value="NProd">"Нач.Прод."</option>
+                            <option value="S">"Боец"</option>
+                        </select>
+                    </div>
+
+                </div>
 
                 <input class="button1" type="submit" value="Сохранить"/>
 
@@ -95,31 +103,14 @@
                 <div class="title">Добавить экспедицию</div>
 
                 <input class="input_green" type="text" name="name" placeholder="Название:"/>
-                <input class="input_green" type="text" name="komandor" placeholder="Командир:"/>
-                <input class="input_green" type="text" name="zam" placeholder="Зам. Командира"/>
-
-                <!--select id="otryad" style="height: 260px" class="input_green" name="otryad" multiple="multiple" title="">
-                    <option value="Legion">"Легион" ТИСБИ г. Казань</option>
-                    <option value="Himik">"Химик" КНИТУ-КХТИ г. Казань</option>
-                    <option value="KP"> "Книга Памяти" КНИТУ-КАИ им.А.Н.Туполева г. Казань</option>
-                    <option value="SD">"Снежный десант" КФУ г. Казань</option>
-                    <option value="KS">"Красная стрела" ИЭУП г. Казань</option>
-                    <option value="Vozrozhdenie">"Возрождение" г. Казань</option>
-                    <option value="ZF">"Западный Фронт" г. Казань</option>
-                    <option value="PT">"Поисковая тропа" КГЭУ г.Казань</option>
-                    <option value="R">"Разведка" г. Казань</option>
-                    <option value="SKIF">"СКИФ" ТГГПУ г. Казань</option>
-                    <option value="R">"Поиск" МБОУ «Гимназия №96» г.Казань</option>
-                    <option value="R">"Юные патриоты России" г. Казань</option>
-                </select-->
 
                 <div id="squads_container">
 
                 </div>
 
-                <input class="input_green" type="text" name="squads" placeholder="Отряды"/>
+                <input class="input_green" type="text" name="squads" placeholder="Отряды.."/>
 
-                <div style="margin-top: -10px; height: 0">
+                <div style="height: 0">
                     <div id="squads_offer_list_container" class="offer_list">
 
                     </div>
@@ -127,11 +118,17 @@
 
                 <input class="input_green" type="text" name="place" placeholder="место проведения экспедиции"/>
 
-                <select id="dolshnost" class="input_green" name="dolshnost" title="">
-                    <option value="No">Участники...</option>
-                    <option value="No">${user.getSurname()}  ${user.getName()}
-                    </option>
-                </select>
+                <div id="participants_container">
+
+                </div>
+
+                <input class="input_green" type="text" name="participants" placeholder="Участники.."/>
+
+                <div style="height: 0">
+                    <div id="participants_offer_list_container" class="offer_list">
+
+                    </div>
+                </div>
 
                 <input type="submit" class="button1" value="Добавить"/>
             </form>
@@ -146,6 +143,7 @@
 
     <script type="text/javascript">
         var squads = [];
+        var participants = [];
 
         function find(array, value) {
 
@@ -156,17 +154,22 @@
             return -1;
         }
 
+        function removeParticipant(id){
+            delete participants[find(participants, id)];
+
+            var containerParticipants = $('#participants_container');
+            containerParticipants.find('div[participantid=' + id + ']').hide();
+        }
+
         function removeSquad(id) {
             delete squads[find(squads, id)];
 
-            console.log(squads);
-
             var containerSquads = $('#squads_container');
-            containerSquads.find('div[squadid=' + id + ']').hide(100);
+            containerSquads.find('div[squadid=' + id + ']').hide();
         }
 
         function addSquad(id, name) {
-            if(find(squads, id) != -1) return;
+            if (find(squads, id) != -1) return;
 
             squads.push(id);
 
@@ -174,7 +177,8 @@
 
             var squad = $('<div/>', {
                 text: name,
-                squadId: id
+                squadId: id,
+                'class': 'selected_item'
             });
 
             var removeButton = $('<button/>', {
@@ -184,19 +188,91 @@
                 text: 'x'
             });
 
-//            removeButton.on("click", function(e) {
-//                removeSquad(id);
-//            });
-
             squad.prepend(removeButton);
             containerSquads.prepend(squad);
         }
 
+        function addParticipant(id, name, image) {
+            if (find(participants, id) != -1) return;
+
+            participants.push(id);
+
+            var containerParticipants = $('#participants_container');
+
+            var jetton = $('<a/>', {
+                'class': 'jetton_little',
+                'href': '/user/' + id,
+                text: name
+            });
+
+            var participant = $('<div/>', {
+                participantid: id,
+                'class': 'selected_item'
+            });
+
+            var avatarka = $('<img/>', {
+                src: image,
+                'class': 'offer_list_image'
+            });
+
+            var removeButton = $('<button/>', {
+                'class': 'removeButton',
+                'onclick': 'removeParticipant(' + id + ')',
+                'type': 'button',
+                text: 'x'
+            });
+
+            participant.append(removeButton);
+            participant.append(avatarka);
+            participant.append(jetton);
+            containerParticipants.prepend(participant);
+        }
+
         $(document).ready(function () {
             var inputSquads = $('input[name=squads]');
+            var inputParticipants = $('input[name=participants]');
             var listSquads = $('#squads_offer_list_container');
+            var listParticipants = $('#participants_offer_list_container');
 
             listSquads.hide();
+            listParticipants.hide();
+
+            function updateListParticipants(){
+                if (inputParticipants.val() == '') {
+                    hideListParticipants();
+                    return;
+                }
+
+                $.ajax({
+                    url: "/getJson?action=get_users&query=" + inputParticipants.val()
+                }).done(function (data) {
+                    listParticipants.html('');
+
+                    var result = JSON.parse(data);
+                    var needToShow = false;
+
+                    if (result.length == 0) {
+                        listParticipants.hide(500);
+                        return;
+                    } else if (listParticipants.html() == '') {
+                        needToShow = true;
+                    }
+
+                    for (var i = 0; i < result.length; i++) {
+                        var line = $('<div/>', {
+                            text: result[i].name,
+                            onclick: 'addParticipant(' + result[i].id + ',\'' + result[i].name + '\',\'' + result[i].image +'\')',
+                            'class': 'offer_list_item'
+                        });
+
+                        listParticipants.prepend(line);
+                    }
+
+                    if (needToShow) {
+                        listParticipants.show(700);
+                    }
+                });
+            }
 
             function updateListSquads() {
                 if (inputSquads.val() == '') {
@@ -239,6 +315,10 @@
                 listSquads.hide(400);
             }
 
+            function hideListParticipants(){
+                listParticipants.hide(400);
+            }
+
             inputSquads.focusout(function (e) {
                 hideListSquads();
                 inputSquads.val('');
@@ -246,6 +326,15 @@
 
             inputSquads.keyup(function (e) {
                 updateListSquads();
+            });
+
+            inputParticipants.focusout(function (e) {
+                hideListParticipants();
+                inputParticipants.val('');
+            });
+
+            inputParticipants.keyup(function (e) {
+                updateListParticipants();
             });
         });
     </script>

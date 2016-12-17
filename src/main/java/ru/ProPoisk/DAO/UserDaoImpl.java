@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
         preparedStatement.setString(4, user.getPhoneNumber());
         preparedStatement.setString(5, user.getDOB());
         preparedStatement.setString(6, user.getCity());
-        preparedStatement.setString(7, user.getImageB64());
+        preparedStatement.setString(7, user.getImage());
         preparedStatement.setInt(8, user.getSquad());
         preparedStatement.setString(9, user.getEmail());
         preparedStatement.setString(10, user.getSurname());
@@ -223,6 +223,13 @@ public class UserDaoImpl implements UserDao {
         statement.setInt(2, friendId);
 
         statement.executeUpdate();
+    }
+
+    @Override
+    public User[] getArrayBySearch(String q) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.users WHERE login LIKE '%" + q + "%' OR surname LIKE '%" + q + "%' OR patronymic LIKE '%" + q + "%';";
+        return getUsersFromResultSet(connection.createStatement().executeQuery(query));
     }
 
     private boolean stringToBoolean(String s) {

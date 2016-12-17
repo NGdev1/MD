@@ -6,6 +6,7 @@ import ru.ProPoisk.DAO.SquadsDaoImpl;
 import ru.ProPoisk.DAO.UserDao;
 import ru.ProPoisk.DAO.UserDaoImpl;
 import ru.ProPoisk.models.Squad;
+import ru.ProPoisk.models.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,8 +45,21 @@ public class GetJson extends HttpServlet {
                 List<Squad> result = squadsDao.getListBySearch(query);
                 PrintWriter pw = resp.getWriter();
                 pw.write(new ObjectMapper().writeValueAsString(result));
+                return;
             } catch (SQLException e) {
                 System.out.println("error finding squad " + e.getMessage());
+                return;
+            }
+        } else if("get_users".equals(action)){
+            String query = req.getParameter("query");
+
+            try {
+                User[] result = userDao.getArrayBySearch(query);
+                PrintWriter pw = resp.getWriter();
+                pw.write(new ObjectMapper().writeValueAsString(result));
+                return;
+            } catch (SQLException e) {
+                System.out.println("error finding user " + e.getMessage());
                 return;
             }
         }

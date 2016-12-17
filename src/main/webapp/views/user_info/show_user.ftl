@@ -45,7 +45,7 @@
 
 
         <#if userInfo??>
-            <img class="user-avatar" src="/images/no_photo2.png"/>
+            <img class="user-avatar" src="/images/avatars/no_photo2.png"/>
 
             <div class="user-info-text">
                 <div class="user-info">${userInfo.getSurname()}</div>
