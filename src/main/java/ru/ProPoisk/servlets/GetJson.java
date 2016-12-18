@@ -54,7 +54,7 @@ public class GetJson extends HttpServlet {
             String query = req.getParameter("query");
 
             try {
-                User[] result = userDao.getArrayBySearch(query);
+                List<User> result = userDao.getArrayBySearch(query);
                 PrintWriter pw = resp.getWriter();
                 pw.write(new ObjectMapper().writeValueAsString(result));
                 return;

@@ -44,30 +44,46 @@ public class Settings extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
 
-        String username = req.getParameter("login");
-        String surname = req.getParameter("surname");
-        String patronymic = req.getParameter("patronymic");
-        String phone = req.getParameter("tel");
-        String email = req.getParameter("mail");
-        String dolshnost = req.getParameter("dolshnost");
+        String action = req.getParameter("action");
 
-        User user = (User) session.getAttribute("user");
+        if("change_profile".equals(action)){
+            String username = req.getParameter("login");
+            String surname = req.getParameter("surname");
+            String patronymic = req.getParameter("patronymic");
+            String phone = req.getParameter("tel");
+            String email = req.getParameter("mail");
+            String dolshnost = req.getParameter("dolshnost");
 
-        user.setName(username);
-        user.setSurname(surname);
-        user.setPatronymic(patronymic);
-        user.setPhoneNumber(phone);
-        user.setEmail(email);
-        user.setDolshnost(dolshnost);
+            User user = (User) session.getAttribute("user");
 
-        try {
-            dao.changeUser(user);
-        } catch (SQLException e) {
-            System.out.println("Changing profile error:" + e.getMessage());
+            user.setName(username);
+            user.setSurname(surname);
+            user.setPatronymic(patronymic);
+            user.setPhoneNumber(phone);
+            user.setEmail(email);
+            user.setDolshnost(dolshnost);
+
+            try {
+                dao.changeUser(user);
+            } catch (SQLException e) {
+                System.out.println("Changing profile error:" + e.getMessage());
+            }
+
+            session.setAttribute("user", user);
+
+            resp.sendRedirect("/settings");
+        } else if("add_expedition".equals(action)){
+            String name = req.getParameter("name");
+            String participants = req.getParameter("participants");
+            String squads = req.getParameter("squads");
+            String place = req.getParameter("place");
+
+            System.out.println("Имя " + name);
+            System.out.println("Участники " + participants);
+            System.out.println("Отряды " + squads);
+            System.out.println("Место " + place);
+
+            resp.getWriter().write("success");
         }
-
-        session.setAttribute("user", user);
-
-        resp.sendRedirect("/settings");
     }
 }

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by apple on 18.10.16.
@@ -41,7 +43,7 @@ public class Admin extends HttpServlet {
             }
         }
 
-        User[] users = new User[0];
+        List<User> users = new ArrayList<>();
         try {
             users = UserDaoImpl.getInstance().getAll();
         } catch (SQLException e) {

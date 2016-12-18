@@ -2494,6 +2494,15 @@
       <column name="VARIABLE_NAME" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
       <column name="VARIABLE_VALUE" sqlType="VARCHAR" precision="1024" scale="0" nullable="true" jdbcType="12"/>
     </table>
+    <table name="expedition" schema="" catalog="pro_poisk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="1000" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="place" sqlType="VARCHAR" precision="1000" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="participants_ibfk_2" table="participants" schema="" catalog="pro_poisk" columns="journey_id"/>
+      <exported-key name="squads_in_journey_ibfk_1" table="squads_in_journey" schema="" catalog="pro_poisk" columns="journey_id"/>
+    </table>
     <table name="feed" schema="" catalog="pro_poisk" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="author_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -2510,10 +2519,24 @@
       <foreign-key name="friends_ibfk_1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
       <foreign-key name="friends_ibfk_2" columns="friend_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
     </table>
+    <table name="participants" schema="" catalog="pro_poisk" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="journey_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="participants_ibfk_1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="participants_ibfk_2" columns="journey_id" ref-table="expedition" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
     <table name="squads" schema="" catalog="pro_poisk" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="squads_in_journey_ibfk_2" table="squads_in_journey" schema="" catalog="pro_poisk" columns="squad_id"/>
+      <exported-key name="squad_const" table="users" schema="" catalog="pro_poisk" columns="squad"/>
+    </table>
+    <table name="squads_in_journey" schema="" catalog="pro_poisk" type="TABLE">
+      <column name="journey_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="squad_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="squads_in_journey_ibfk_1" columns="journey_id" ref-table="expedition" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="squads_in_journey_ibfk_2" columns="squad_id" ref-table="squads" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
     </table>
     <table name="users" schema="" catalog="pro_poisk" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -2524,16 +2547,19 @@
       <column name="DOB" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <column name="city" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="image" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
-      <column name="otryad" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="squad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="email" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="patronymic" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="surname" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="dolshnost" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="squad_const" columns="squad" ref-table="squads" ref-schema="" ref-catalog="pro_poisk" ref-columns="id" update-rule="0" delete-rule="0" deferrability="2"/>
       <exported-key name="feed_users_id_fk" table="feed" schema="" catalog="pro_poisk" columns="author_id"/>
       <exported-key name="friends_ibfk_1" table="friends" schema="" catalog="pro_poisk" columns="user_id"/>
       <exported-key name="friends_ibfk_2" table="friends" schema="" catalog="pro_poisk" columns="friend_id"/>
+      <exported-key name="participants_ibfk_1" table="participants" schema="" catalog="pro_poisk" columns="user_id"/>
       <index name="id" unique="false" columns="id"/>
+      <index name="squad_const" unique="false" columns="squad"/>
     </table>
     <table name="host_summary" schema="" catalog="sys" type="VIEW">
       <column name="host" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>

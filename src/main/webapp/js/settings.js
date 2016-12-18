@@ -8,11 +8,16 @@ $(document).ready(function () {
         var form = $(this);
 
         function addClassEmptyIfNoValue() {
-            form.find(".input_green").each(function () {
-                if ($(this).val() != '') {
-                    $(this).removeClass("empty-field")
+            var fields = [];
+
+            fields.push($('input[name=name]'));
+            fields.push($('input[name=place]'));
+
+            fields.forEach(function (element, index, array) {
+                if (element.val() != '') {
+                    element.removeClass("empty-field")
                 } else {
-                    $(this).addClass("empty-field")
+                    element.addClass("empty-field")
                 }
             });
         }
@@ -36,7 +41,6 @@ $(document).ready(function () {
         }
 
         form.submit(function () {
-
             addClassEmptyIfNoValue();
             var countOfEmptyFields = form.find('.empty-field').size();
 
@@ -48,8 +52,11 @@ $(document).ready(function () {
                     url: "/settings",
                     type: "POST",
                     data: {
+                        "action": "add_expedition",
                         "name": $('input[name=name]').val(),
-
+                        "participants": JSON.stringify(participants),
+                        "squads": JSON.stringify(squads),
+                        "place": $('input[name=place]').val()
                     }
                 }).done(function (data) {
                     if (data == "success") {
@@ -57,7 +64,7 @@ $(document).ready(function () {
 
                         setTimeout(function () {
                             location.href = "/"
-                        }, 500);
+                        }, 1000);
 
                     } else {
                         var message = JSON.parse(data);

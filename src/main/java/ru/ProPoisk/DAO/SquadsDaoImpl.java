@@ -60,7 +60,7 @@ public class SquadsDaoImpl implements SquadsDao {
         else return null;
     }
 
-    private List<Squad> getSquadsFromResultSet(ResultSet resultSet) throws SQLException {
+    public static List<Squad> getSquadsFromResultSet(ResultSet resultSet) throws SQLException {
         ArrayList<Squad> squads = new ArrayList<>();
         Squad squad;
         while (resultSet.next()) {

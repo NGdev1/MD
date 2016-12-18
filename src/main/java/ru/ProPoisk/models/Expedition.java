@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by apple on 18.12.16.
  */
-public class Journey {
+public class Expedition {
     private int id;
     private String name;
     private boolean status;
@@ -14,7 +14,7 @@ public class Journey {
     private List<Squad> squads;
     private List<User> participants;
 
-    public Journey(int id, String name, boolean status, String place, List<Squad> squads, List<User> participants){
+    public Expedition(int id, String name, boolean status, String place, List<Squad> squads, List<User> participants){
         this.id = id;
         this.name = name;
         this.status = status;
@@ -23,7 +23,7 @@ public class Journey {
         this.participants = participants;
     }
 
-    public Journey(int id, String name, boolean status, String place){
+    public Expedition(int id, String name, boolean status, String place){
         this.id = id;
         this.name = name;
         this.status = status;

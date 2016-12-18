@@ -3,6 +3,8 @@ package ru.ProPoisk.DAO;
 import ru.ProPoisk.models.User;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by apple on 22.08.16.
@@ -16,7 +18,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean isRegistered(String userName) {
-        User[] allUsers = new User[0];
+        List<User> allUsers = new ArrayList<>();
         try {
             allUsers = myDAO.getAll();
         } catch (SQLException e) {

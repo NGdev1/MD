@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserDaoImpl implements UserDao {
 
@@ -99,7 +100,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User[] getAllNoFriends(int userId) throws SQLException {
+    public List<User> getAllNoFriends(int userId) throws SQLException {
         String query = "SELECT * FROM pro_poisk.users WHERE id NOT IN (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
 
         Connection connection = DbWrapper.getConnection();
@@ -110,14 +111,14 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User[] getAll() throws SQLException {
+    public List<User> getAll() throws SQLException {
         String query = "SELECT * FROM `pro_poisk`.`users`";
         Connection connection = DbWrapper.getConnection();
 
         return getUsersFromResultSet(connection.prepareStatement(query).executeQuery());
     }
 
-    private User[] getUsersFromResultSet(ResultSet resultSet) throws SQLException {
+    public static List<User> getUsersFromResultSet(ResultSet resultSet) throws SQLException {
         ArrayList<User> users = new ArrayList<>();
         User user;
         while (resultSet.next()) {
@@ -140,12 +141,7 @@ public class UserDaoImpl implements UserDao {
             users.add(user);
         }
 
-        User[] usersArr = new User[users.size()];
-        for (int i = 0; i < users.size(); i++) {
-            usersArr[i] = users.get(i);
-        }
-
-        return usersArr;
+        return users;
     }
 
     @Override
@@ -159,14 +155,6 @@ public class UserDaoImpl implements UserDao {
 
         } catch (SQLException e) {
             System.out.println("error: " + e.getMessage());
-        }
-    }
-
-    @Override
-    public void printAll() throws SQLException {
-        User[] users = getAll();
-        for (int i = 0; i < users.length; i++) {
-            System.out.println(users[i].toString());
         }
     }
 
@@ -189,7 +177,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User[] getFriends(int userId) throws SQLException {
+    public List<User> getFriends(int userId) throws SQLException {
         Connection connection = DbWrapper.getConnection();
 
         String query = "SELECT * FROM pro_poisk.users WHERE id IN (SELECT friend_id FROM pro_poisk.friends WHERE user_id = ?);";
@@ -226,17 +214,17 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User[] getArrayBySearch(String q) throws SQLException {
+    public List<User> getArrayBySearch(String q) throws SQLException {
         Connection connection = DbWrapper.getConnection();
         String query = "SELECT * FROM pro_poisk.users WHERE login LIKE '%" + q + "%' OR surname LIKE '%" + q + "%' OR patronymic LIKE '%" + q + "%';";
         return getUsersFromResultSet(connection.createStatement().executeQuery(query));
     }
 
-    private boolean stringToBoolean(String s) {
+    public static boolean stringToBoolean(String s) {
         return !s.equals("0");
     }
 
-    private String booleanToString(Boolean b) {
+    public static String booleanToString(Boolean b) {
         if (b) return "1";
         else return "0";
     }

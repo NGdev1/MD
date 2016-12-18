@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StreamCorruptedException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Михаил on 13.11.2016.
@@ -35,14 +37,14 @@ public class Contacts extends HttpServlet {
 
         User user = (User) session.getAttribute("user");
 
-        User[] users = new User[0];
+        List<User> users = new ArrayList<>();
         try {
             users = userDao.getAllNoFriends(user.getId());
         } catch (SQLException e) {
             System.out.println("Error getting all users: " + e.getMessage());
         }
 
-        User[] friends = new User[0];
+        List<User> friends = new ArrayList<>();
         try {
             friends = UserDaoImpl.getInstance().getFriends(user.getId());
         } catch (SQLException e) {
