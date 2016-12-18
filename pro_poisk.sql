@@ -1,25 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.4.10
--- http://www.phpmyadmin.net
---
--- Хост: localhost:3306
--- Время создания: Дек 15 2016 г., 11:31
--- Версия сервера: 5.5.42
--- Версия PHP: 5.6.10
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
---
--- База данных: `pro_poisk`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `feed`
---
-
 DROP TABLE IF EXISTS `feed`;
 CREATE TABLE IF NOT EXISTS `feed` (
   `id` int(11) NOT NULL,
@@ -27,10 +5,6 @@ CREATE TABLE IF NOT EXISTS `feed` (
   `text` varchar(10000) NOT NULL,
   `date_time` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `feed`
---
 
 INSERT INTO `feed` (`id`, `author_id`, `text`, `date_time`) VALUES
   (58, 32, 'Hi', '2016-11-02 13:32:15'),
@@ -61,21 +35,11 @@ INSERT INTO `feed` (`id`, `author_id`, `text`, `date_time`) VALUES
   (97, 28, 'спать пора а мы кодим долго', '2016-11-28 22:34:39'),
   (98, 28, 'dfsdfsadjkfnl dfsdfsadjkfnl dfsdfsadjkfnldfsdfsadjkfnl dfsdfsadjkfnl dfsdfsadjkfnldfsdfsadjkfnl dfsdfsadjkfnl dfsdfsadjkfnlvdfsdfsadjkfnl dfsdfsadjkfnl  ', '2016-12-10 12:24:27');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `friends`
---
-
 DROP TABLE IF EXISTS `friends`;
 CREATE TABLE IF NOT EXISTS `friends` (
   `user_id` int(11) NOT NULL,
   `friend_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `friends`
---
 
 INSERT INTO `friends` (`user_id`, `friend_id`) VALUES
   (31, 28),
@@ -83,21 +47,25 @@ INSERT INTO `friends` (`user_id`, `friend_id`) VALUES
   (28, 31),
   (28, 38);
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `journey`;
+CREATE TABLE IF NOT EXISTS `journey` (
+  `id` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `place` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Структура таблицы `squads`
---
+DROP TABLE IF EXISTS `participants`;
+CREATE TABLE IF NOT EXISTS `participants` (
+  `user_id` int(11) NOT NULL,
+  `journey_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `squads`;
 CREATE TABLE IF NOT EXISTS `squads` (
   `id` int(11) NOT NULL,
   `name` varchar(300) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `squads`
---
 
 INSERT INTO `squads` (`id`, `name`) VALUES
   (1, '"Легион" ТИСБИ г. Казань'),
@@ -113,11 +81,11 @@ INSERT INTO `squads` (`id`, `name`) VALUES
   (11, '"Поиск" МБОУ «Гимназия №96» г.Казань'),
   (12, '"Юные патриоты России" г. Казань');
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `users`
---
+DROP TABLE IF EXISTS `squads_in_journey`;
+CREATE TABLE IF NOT EXISTS `squads_in_journey` (
+  `journey_id` int(11) NOT NULL,
+  `squad_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
@@ -136,87 +104,69 @@ CREATE TABLE IF NOT EXISTS `users` (
   `dolshnost` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `users`
---
-
 INSERT INTO `users` (`id`, `login`, `password`, `gender`, `phone`, `DOB`, `city`, `image`, `squad`, `email`, `patronymic`, `surname`, `dolshnost`) VALUES
-  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', 'picture', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
-  (30, 'Artur', 63539877, 1, '89600', '1998-03-10', 'Kazan', 'picture', 1, '', '', '', ''),
-  (31, 'Lesnik', -1106208330, 1, '89520340416', '1999-03-11', 'Kazan', 'picture', 2, '', '', '', ''),
-  (32, 'Rustam', 1450575459, 1, '777', '1996-12-12', 'Kazan', 'picture', 3, '', '', '', ''),
-  (33, 'лесник', -1121450961, 1, '89534034584', '1999-03-11', 'Kazan', 'picture', 4, '', '', '', ''),
-  (34, 'Darya', 1835010204, 0, '89046606959', '1998-07-05', 'Kazan', 'picture', 5, '', '', '', ''),
-  (36, 'Vlad', 867363100, 1, '89063261744', '1998-12-26', 'Kazan', 'picture', 3, '', '', '', ''),
-  (38, 'кастрюлька', -378969071, 1, '89053168537', '1997-02-15', 'Kazan', 'picture', 2, '', '', '', ''),
-  (40, 'Артем', 1450575459, 1, '89871884634', '1997-08-07', 'Kazan', 'picture', 1, '', '', '', '');
+  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', '/images/avatars/no_photo2.png', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
+  (30, 'Artur', 63539877, 1, '89600', '1998-03-10', 'Kazan', '/images/avatars/no_photo2.png', 1, '', '', '', ''),
+  (31, 'Lesnik', -1106208330, 1, '89520340416', '1999-03-11', 'Kazan', '/images/avatars/no_photo2.png', 2, '', '', '', ''),
+  (32, 'Rustam', 1450575459, 1, '777', '1996-12-12', 'Kazan', '/images/avatars/no_photo2.png', 3, '', '', '', ''),
+  (33, 'лесник', -1121450961, 1, '89534034584', '1999-03-11', 'Kazan', '/images/avatars/no_photo2.png', 4, '', '', '', ''),
+  (34, 'Darya', 1835010204, 0, '89046606959', '1998-07-05', 'Kazan', '/images/avatars/no_photo2.png', 5, '', '', '', ''),
+  (36, 'Vlad', 867363100, 1, '89063261744', '1998-12-26', 'Kazan', '/images/avatars/no_photo2.png', 3, '', '', '', ''),
+  (38, 'кастрюлька', -378969071, 1, '89053168537', '1997-02-15', 'Kazan', '/images/avatars/no_photo2.png', 2, '', '', '', ''),
+  (40, 'Артем', 1450575459, 1, '89871884634', '1997-08-07', 'Kazan', '/images/avatars/no_photo2.png', 1, '', '', '', '');
 
---
--- Индексы сохранённых таблиц
---
 
---
--- Индексы таблицы `feed`
---
 ALTER TABLE `feed`
   ADD PRIMARY KEY (`id`),
   ADD KEY `feed_users_id_fk` (`author_id`);
 
---
--- Индексы таблицы `friends`
---
 ALTER TABLE `friends`
   ADD PRIMARY KEY (`user_id`,`friend_id`),
   ADD KEY `friend_id` (`friend_id`);
 
---
--- Индексы таблицы `squads`
---
+ALTER TABLE `journey`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `participants`
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `journey_id` (`journey_id`);
+
 ALTER TABLE `squads`
   ADD PRIMARY KEY (`id`);
 
---
--- Индексы таблицы `users`
---
+ALTER TABLE `squads_in_journey`
+  ADD KEY `journey_id` (`journey_id`),
+  ADD KEY `squad_id` (`squad_id`);
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`);
+  ADD KEY `id` (`id`),
+  ADD KEY `squad_const` (`squad`);
 
---
--- AUTO_INCREMENT для сохранённых таблиц
---
 
---
--- AUTO_INCREMENT для таблицы `feed`
---
 ALTER TABLE `feed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
---
--- AUTO_INCREMENT для таблицы `squads`
---
+ALTER TABLE `journey`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `squads`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT для таблицы `users`
---
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
---
--- Ограничения внешнего ключа сохраненных таблиц
---
 
---
--- Ограничения внешнего ключа таблицы `feed`
---
 ALTER TABLE `feed`
   ADD CONSTRAINT `feed_users_id_fk` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
---
--- Ограничения внешнего ключа таблицы `friends`
---
 ALTER TABLE `friends`
   ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE users
-    ADD CONSTRAINT squad_const FOREIGN KEY (squad) REFERENCES squads (id) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `participants`
+  ADD CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`journey_id`) REFERENCES `journey` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `squads_in_journey`
+  ADD CONSTRAINT `squads_in_journey_ibfk_2` FOREIGN KEY (`squad_id`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `squads_in_journey_ibfk_1` FOREIGN KEY (`journey_id`) REFERENCES `journey` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `users`
+  ADD CONSTRAINT `squad_const` FOREIGN KEY (`squad`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
