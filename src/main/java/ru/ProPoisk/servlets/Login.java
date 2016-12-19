@@ -57,6 +57,7 @@ public class Login extends HttpServlet {
     public static boolean login(HttpServletRequest req, HttpServletResponse resp) {
         String username = req.getParameter("name");
         String password = req.getParameter("password");
+//        String save = req.getParameter("save");
 
         if (username == null || password == null) {
             return false;

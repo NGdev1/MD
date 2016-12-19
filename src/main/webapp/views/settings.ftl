@@ -54,11 +54,11 @@
             <div class="title">Настройки профиля</div>
             <div class="user-info-container">
 
-                <form action="/image_load" method="post" enctype="multipart/form-data">
+                <form action="/image_load/${user.getId()}" method="post" enctype="multipart/form-data">
 
-                    <img class="user-avatar-center" src="${user.getImage()}"/>
+                    <img class="user-avatar-center" src="../upload/${user.getImage()}"/>
 
-                    <input class="user-avatar-center" name="image" type="file">
+                    <input class="user-avatar-center" name="image" type="file" accept="image/jpeg,image/png">
 
                     <div>
                         <input class="button1 user-avatar-center" type="submit" value="Отправить">

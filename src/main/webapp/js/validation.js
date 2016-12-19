@@ -74,7 +74,10 @@ $(document).ready(function () {
                             "city" : $('select[name=city] option:selected').val(),
                             "otryad" : $('select[name=otryad] option:selected').val(),
                             "email" : $('input[name=mail]').val(),
-                            "sex" : $('input[name=sex]:checked').val()
+                            "surname" : $('input[name=surname]').val(),
+                            "sex" : $('input[name=sex]:checked').val(),
+                            "patronymic" : $('input[name=patronymic]').val(),
+                            "dolshnost" : "pidor"
                         }
                     }).done(function(data) {
                         if(data == "success"){

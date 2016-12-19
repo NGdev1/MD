@@ -6,10 +6,7 @@ package ru.ProPoisk.DAO;
 import ru.ProPoisk.models.User;
 import ru.ProPoisk.utils.DbWrapper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -227,5 +224,16 @@ public class UserDaoImpl implements UserDao {
     public static String booleanToString(Boolean b) {
         if (b) return "1";
         else return "0";
+    }
+
+    public void setUserImage(String imageName , int id) {
+        Connection connection = DbWrapper.getConnection();
+        String query = "UPDATE pro_poisk.users SET image='" + imageName + "' WHERE id='" + id + "'";
+        try {
+            Statement statement = connection.createStatement();
+            statement.execute(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -23,8 +23,8 @@
         <input class="form-control" type="text" name="name" placeholder="Логин"/>
         <input class="form-control" type="password" name="password" placeholder="Пароль"/>
 
-        <label for="save">Запомнить меня</label>
-        <input id="save" type="checkbox" name="save" checked="checked"/>
+        <label for="save">Запомнить меня
+        <input id="save" type="checkbox" name="save" checked="checked" value="yes"/></label>
     <#if error??>
         <div class="text-danger">${error}</div>
     </#if>
