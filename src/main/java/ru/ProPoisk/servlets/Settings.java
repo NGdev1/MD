@@ -1,5 +1,9 @@
 package ru.ProPoisk.servlets;
 
+import org.codehaus.jackson.map.ObjectMapper;
+import ru.ProPoisk.DAO.ExpeditionDao;
+import ru.ProPoisk.DAO.ExpeditionDaoImpl;
+import ru.ProPoisk.models.Expedition;
 import ru.ProPoisk.models.User;
 import ru.ProPoisk.DAO.UserDao;
 import ru.ProPoisk.DAO.UserDaoImpl;
@@ -12,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 /**
  * Created by Михаил on 13.11.2016.
@@ -21,11 +26,13 @@ import java.sql.SQLException;
 
 public class Settings extends HttpServlet {
 
-    UserDao dao;
+    UserDao userDao;
+    ExpeditionDao expeditionDao;
 
     @Override
     public void init() throws ServletException {
-        dao = UserDaoImpl.getInstance();
+        userDao = UserDaoImpl.getInstance();
+        expeditionDao = ExpeditionDaoImpl.getInstance();
     }
 
     @Override
@@ -64,7 +71,7 @@ public class Settings extends HttpServlet {
             user.setDolshnost(dolshnost);
 
             try {
-                dao.changeUser(user);
+                userDao.changeUser(user);
             } catch (SQLException e) {
                 System.out.println("Changing profile error:" + e.getMessage());
             }
@@ -74,14 +81,26 @@ public class Settings extends HttpServlet {
             resp.sendRedirect("/settings");
         } else if("add_expedition".equals(action)){
             String name = req.getParameter("name");
-            String participants = req.getParameter("participants");
-            String squads = req.getParameter("squads");
+            String participantsParameter = req.getParameter("participants");
+            String squadsParameter = req.getParameter("squads");
             String place = req.getParameter("place");
 
-            System.out.println("Имя " + name);
-            System.out.println("Участники " + participants);
-            System.out.println("Отряды " + squads);
-            System.out.println("Место " + place);
+            ObjectMapper mapper = new ObjectMapper();
+            Integer[] participants = mapper.readValue(participantsParameter, Integer[].class);
+            Integer[] squads = mapper.readValue(squadsParameter, Integer[].class);
+
+            Expedition expedition = new Expedition(0, name, false, place);
+
+            try {
+                expeditionDao.saveJourney(expedition);
+
+                expedition = expeditionDao.getJourney(expedition.getName());
+
+                expeditionDao.addParticipantsToJourney(Arrays.asList(participants), expedition);
+                expeditionDao.addSquadsToJourney(Arrays.asList(squads), expedition);
+            } catch (SQLException e) {
+                System.out.println("Error saving expedition: " + e.getMessage());
+            }
 
             resp.getWriter().write("success");
         }

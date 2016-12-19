@@ -16,6 +16,16 @@ import java.util.List;
  * Created by apple on 18.12.16.
  */
 public class ExpeditionDaoImpl implements ExpeditionDao {
+
+    private static ExpeditionDaoImpl ourInstance = new ExpeditionDaoImpl();
+
+    public static ExpeditionDaoImpl getInstance() {
+        return ourInstance;
+    }
+
+    private ExpeditionDaoImpl() {
+    }
+
     @Override
     public void saveJourney(Expedition expedition) throws SQLException {
         Connection connection = DbWrapper.getConnection();
@@ -61,27 +71,52 @@ public class ExpeditionDaoImpl implements ExpeditionDao {
 
     @Override
     public List<Expedition> getAll() throws SQLException {
-        return null;
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.expedition";
+
+        return getExpeditionsFromResultSet(connection.createStatement().executeQuery(query));
     }
 
     @Override
     public Expedition getJourney(int id) throws SQLException {
-        return null;
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.expedition WHERE id=?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        return getExpeditionFromResultSet(preparedStatement.executeQuery());
     }
 
     @Override
     public Expedition getJourney(String name) throws SQLException {
-        return null;
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.expedition WHERE name=?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, name);
+        return getExpeditionFromResultSet(preparedStatement.executeQuery());
     }
 
     @Override
     public void deleteJourney(int id) throws SQLException {
-
+        Connection connection = DbWrapper.getConnection();
+        String query = "DELETE FROM pro_poisk.expedition WHERE id=?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        preparedStatement.executeUpdate();
     }
 
     @Override
     public void changeJourney(Expedition expedition) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
 
+        PreparedStatement preparedStatement = connection.prepareStatement("UPDATE pro_poisk.expedition SET name=?, status=?, place=? WHERE id=?;");
+
+        preparedStatement.setString(1, expedition.getName());
+        preparedStatement.setBoolean(2, expedition.getStatus());
+        preparedStatement.setString(3, expedition.getPlace());
+
+        preparedStatement.setInt(4, expedition.getId());
+
+        preparedStatement.execute();
     }
 
     private List<User> getUsersFromExpedition(Expedition expedition) throws SQLException {

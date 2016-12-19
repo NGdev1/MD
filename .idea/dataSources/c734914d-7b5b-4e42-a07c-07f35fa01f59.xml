@@ -13,9 +13,9 @@
     <schema id="7" parent="1" name="hockey_shop"/>
     <schema id="8" parent="1" name="home_work"/>
     <schema id="9" parent="1" name="kontra"/>
-    <table id="10" parent="2" name="feed"/>
-    <table id="11" parent="2" name="friends"/>
-    <table id="12" parent="2" name="journey"/>
+    <table id="10" parent="2" name="expedition"/>
+    <table id="11" parent="2" name="feed"/>
+    <table id="12" parent="2" name="friends"/>
     <table id="13" parent="2" name="participants"/>
     <table id="14" parent="2" name="squads"/>
     <table id="15" parent="2" name="squads_in_journey"/>
@@ -26,29 +26,54 @@
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="18" parent="10" name="author_id">
+    <column id="18" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="10" name="status">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="place">
+      <Position>4</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="11" name="author_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="10" name="text">
+    <column id="24" parent="11" name="text">
       <Position>3</Position>
       <DataType>varchar(10000)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="10" name="date_time">
+    <column id="25" parent="11" name="date_time">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="21" parent="10" name="feed_users_id_fk">
+    <index id="26" parent="11" name="feed_users_id_fk">
       <ColNames>author_id</ColNames>
     </index>
-    <key id="22" parent="10" name="PRIMARY">
+    <key id="27" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="23" parent="10" name="feed_users_id_fk">
+    <foreign-key id="28" parent="11" name="feed_users_id_fk">
       <ColNames>author_id</ColNames>
       <RefSchemaName>pro_poisk</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -56,25 +81,25 @@
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="24" parent="11" name="user_id">
+    <column id="29" parent="12" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="11" name="friend_id">
+    <column id="30" parent="12" name="friend_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="26" parent="11" name="friend_id">
+    <index id="31" parent="12" name="friend_id">
       <ColNames>friend_id</ColNames>
     </index>
-    <key id="27" parent="11" name="PRIMARY">
+    <key id="32" parent="12" name="PRIMARY">
       <ColNames>user_id
 friend_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="28" parent="11" name="friends_ibfk_1">
+    <foreign-key id="33" parent="12" name="friends_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefSchemaName>pro_poisk</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -82,7 +107,7 @@ friend_id</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <foreign-key id="29" parent="11" name="friends_ibfk_2">
+    <foreign-key id="34" parent="12" name="friends_ibfk_2">
       <ColNames>friend_id</ColNames>
       <RefSchemaName>pro_poisk</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -90,31 +115,6 @@ friend_id</ColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
     </foreign-key>
-    <column id="30" parent="12" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="31" parent="12" name="name">
-      <Position>2</Position>
-      <DataType>varchar(1000)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="12" name="status">
-      <Position>3</Position>
-      <DataType>tinyint(1)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="33" parent="12" name="place">
-      <Position>4</Position>
-      <DataType>varchar(1000)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="34" parent="12" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
     <column id="35" parent="13" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
@@ -142,7 +142,7 @@ friend_id</ColNames>
     <foreign-key id="40" parent="13" name="participants_ibfk_2">
       <ColNames>journey_id</ColNames>
       <RefSchemaName>pro_poisk</RefSchemaName>
-      <RefTableName>journey</RefTableName>
+      <RefTableName>expedition</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
@@ -181,7 +181,7 @@ friend_id</ColNames>
     <foreign-key id="48" parent="15" name="squads_in_journey_ibfk_1">
       <ColNames>journey_id</ColNames>
       <RefSchemaName>pro_poisk</RefSchemaName>
-      <RefTableName>journey</RefTableName>
+      <RefTableName>expedition</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>update</OnUpdate>
       <OnDelete>delete</OnDelete>
