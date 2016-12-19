@@ -51,54 +51,53 @@
     <div class="center-content">
         <div class="container">
 
-            <div class="title">Настройки профиля</div>
-            <div class="user-info-container">
+            <div id="change_profile_form">
+                <div class="title">Настройки профиля</div>
+                <div class="user-info-container">
 
-                <form action="/image_load" method="post" enctype="multipart/form-data">
+                    <form action="/image_load" method="post" enctype="multipart/form-data">
 
-                    <img class="user-avatar-center" src="${user.getImage()}"/>
+                        <img class="user-avatar-center" src="${user.getImage()}"/>
+                        <input class="user-avatar-center" name="image" type="file">
 
-                    <input class="user-avatar-center" name="image" type="file">
+                        <div>
+                            <input class="button1 user-avatar-center" type="submit" value="Отправить">
+                        </div>
+                    </form>
 
-                    <div>
-                        <input class="button1 user-avatar-center" type="submit" value="Отправить">
-                    </div>
-                </form>
+                    <form action="/settings" method="post">
+                        <input name="action" value="change_profile" type="hidden">
 
-                <form id="change_profile_form" action="/settings" method="post">
-                    <input name="action" value="change_profile" type="hidden">
+                        <div class="user-info-text">
+                            <input placeholder="Имя:"
+                                   class="input_green" name="login" value="${user.getName()}"/>
 
-                    <div class="user-info-text">
-                        <input placeholder="Имя:"
-                               class="input_green" name="login" value="${user.getName()}"/>
+                            <input placeholder="Фамилия:"
+                                   class="input_green" name="surname" value="${user.getSurname()}"/>
 
-                        <input placeholder="Фамилия:"
-                               class="input_green" name="surname" value="${user.getSurname()}"/>
+                            <input placeholder="Отчество:"
+                                   class="input_green" name="patronymic"
+                                   value="${user.getPatronymic()}"/>
 
-                        <input placeholder="Отчество:"
-                               class="input_green" name="patronymic"
-                               value="${user.getPatronymic()}"/>
+                            <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
+                                   value="${user.getPhoneNumber()}"/>
 
-                        <input placeholder="Телефон:" class="input_green" type="tel" name="tel"
-                               value="${user.getPhoneNumber()}"/>
+                            <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
 
-                        <input placeholder="@Mail:" class="input_green" name="mail" value="${user.getEmail()}"/>
-
-                        <select id="dolshnost" class="input_green" name="dolshnost" title="">
-                            <option value="No">Должность...</option>
-                            <option value="Kom">"Командир"</option>
-                            <option value="ZKom">"Зам. Ком."</option>
-                            <option value="ZSklad">"Зав.Складом"</option>
-                            <option value="NProd">"Нач.Прод."</option>
-                            <option value="S">"Боец"</option>
-                        </select>
-                    </div>
-                </form>
+                            <select id="dolshnost" class="input_green" name="dolshnost" title="">
+                                <option value="No">Должность...</option>
+                                <option value="Kom">"Командир"</option>
+                                <option value="ZKom">"Зам. Ком."</option>
+                                <option value="ZSklad">"Зав.Складом"</option>
+                                <option value="NProd">"Нач.Прод."</option>
+                                <option value="S">"Боец"</option>
+                            </select>
+                        </div>
+                        <input class="button1" type="submit" value="Сохранить"/>
+                    </form>
+                </div>
 
             </div>
-
-            <input class="button1" type="submit" value="Сохранить"/>
-
 
             <form id="change_password_form" action="/settings" method="post" style="display: none">
                 <div class="title">Сменить пароль</div>

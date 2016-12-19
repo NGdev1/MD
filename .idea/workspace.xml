@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe9a4eb0-f0c9-4956-a725-3673da148d22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -52,6 +49,24 @@
         <option name="myItemId" value="pro_poisk" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="users" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - pro_poisk@127.0.0.1" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="pro_poisk" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -63,9 +78,30 @@
       <file leaf-file-name="settings.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71823204">
-              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            <state vertical-scroll-proportion="-1.0036832">
+              <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="164" column="85" selection-start-line="164" selection-start-column="85" selection-end-line="164" selection-end-column="85" />
+              <folding>
+                <marker date="1482079974453" expanded="true" signature="800:972" placeholder="INSERT INTO ..." />
+                <marker date="1482079974453" expanded="true" signature="3386:3491" placeholder="SELECT * FRO..users..." />
+                <marker date="1482079974453" expanded="true" signature="3433:3490" placeholder="SELECT frien..friends..." />
+                <marker date="1482079974453" expanded="true" signature="3829:3862" placeholder="SELECT * FRO..." />
+                <marker date="1482079974453" expanded="true" signature="5143:5238" placeholder="DELETE FROM ..." />
+                <marker date="1482079974453" expanded="true" signature="6371:6472" placeholder="SELECT * FRO..users..." />
+                <marker date="1482079974453" expanded="true" signature="6414:6471" placeholder="SELECT frien..friends..." />
+                <marker date="1482079974453" expanded="true" signature="6872:6936" placeholder="INSERT INTO ..." />
+                <marker date="1482079974453" expanded="true" signature="7307:7372" placeholder="DELETE FROM ..." />
+                <marker date="1482079974453" expanded="true" signature="7737:7860" placeholder="SELECT * FRO..users..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -596,6 +632,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1208,7 +1248,7 @@
       <workItem from="1481989263038" duration="8305000" />
       <workItem from="1481997779606" duration="19000" />
       <workItem from="1482074015946" duration="8427000" />
-      <workItem from="1482159673167" duration="808000" />
+      <workItem from="1482159673167" duration="2910000" />
     </task>
     <task id="LOCAL-00006" summary="Вход и регистрацию починили">
       <created>1480588443763</created>
@@ -1288,11 +1328,17 @@
       <option name="project" value="LOCAL" />
       <updated>1482085320211</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Добавил кнопку загрузки картинки">
+      <created>1482160518603</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1482160518603</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77343000" />
+    <option name="totallyTimeSpent" value="79445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1360,7 +1406,8 @@
     <MESSAGE value="Контакты сделал в виде жетонов" />
     <MESSAGE value="Сделал динамические выпадпющие списки" />
     <MESSAGE value="Работает добавить экспедицию" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работает добавить экспедицию" />
+    <MESSAGE value="Добавил кнопку загрузки картинки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил кнопку загрузки картинки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1433,6 +1480,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5553539">
           <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1662,13 +1710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8428094">
-          <caret line="158" column="5" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13266444">
@@ -1741,10 +1782,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="85" selection-start-line="164" selection-start-column="85" selection-end-line="164" selection-end-column="85" />
+          <folding>
+            <marker date="1482079974453" expanded="true" signature="800:972" placeholder="INSERT INTO ..." />
+            <marker date="1482079974453" expanded="true" signature="3386:3491" placeholder="SELECT * FRO..users..." />
+            <marker date="1482079974453" expanded="true" signature="3433:3490" placeholder="SELECT frien..friends..." />
+            <marker date="1482079974453" expanded="true" signature="3829:3862" placeholder="SELECT * FRO..." />
+            <marker date="1482079974453" expanded="true" signature="5143:5238" placeholder="DELETE FROM ..." />
+            <marker date="1482079974453" expanded="true" signature="6371:6472" placeholder="SELECT * FRO..users..." />
+            <marker date="1482079974453" expanded="true" signature="6414:6471" placeholder="SELECT frien..friends..." />
+            <marker date="1482079974453" expanded="true" signature="6872:6936" placeholder="INSERT INTO ..." />
+            <marker date="1482079974453" expanded="true" signature="7307:7372" placeholder="DELETE FROM ..." />
+            <marker date="1482079974453" expanded="true" signature="7737:7860" placeholder="SELECT * FRO..users..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71823204">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        <state vertical-scroll-proportion="-1.0036832">
+          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
           <folding />
         </state>
       </provider>
