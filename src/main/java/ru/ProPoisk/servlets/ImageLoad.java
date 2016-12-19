@@ -54,6 +54,7 @@ public class ImageLoad extends HttpServlet {
                     imageName = item.getName();
 
                     String path = getServletContext().getRealPath("/upload/" + imageName);
+
                     uploadedFile = new File(path);
 
                     uploadedFile.createNewFile();

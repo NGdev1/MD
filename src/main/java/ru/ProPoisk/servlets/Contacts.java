@@ -46,7 +46,7 @@ public class Contacts extends HttpServlet {
 
         List<User> friends = new ArrayList<>();
         try {
-            friends = UserDaoImpl.getInstance().getFriends(user.getId());
+            friends = userDao.getFriends(user.getId());
         } catch (SQLException e) {
             System.out.println("Error getting friends: " + e.getMessage());
         }

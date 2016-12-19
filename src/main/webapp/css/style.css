@@ -12,6 +12,17 @@ body {
     height: 100%; position: absolute; padding: 0; margin: 0; width: 100%;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.center {
+    display: block;
+    margin: 10px auto 20px auto;
+    text-align: center;
+}
+
 #map{
     height: 100%;
     width: 100%;
@@ -317,5 +328,14 @@ body {
 .offer_list_image {
     height: 25px;
     float: left;
+}
+
+.white-container {
+    background: white;
+    border: solid 2px lightgray;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 

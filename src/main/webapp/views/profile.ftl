@@ -36,9 +36,9 @@
     <div class="center-content">
         <div class="container">
             <div class="title">Профиль</div>
-            <div class="user-info-container">
+            <div class="white-container">
 
-                <img class="user-avatar" src="/images/avatars/no_photo2.png"/>
+                <img class="user-avatar" src="/upload/${user.getImage()}"/>
 
                 <div class="user-info-text">
                     <div class="user-info">${user.getSurname()}</div>

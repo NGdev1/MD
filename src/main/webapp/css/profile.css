@@ -4,31 +4,24 @@
     width: auto;
 }
 
-.user-info-container{
-    background: white;
-    border: solid 2px lightgray;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
 .user-avatar{
     float: left;
     margin-right: 20px;
     margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+    transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    clip-path: polygon(50% 0%, 65% 31%, 98% 35%, 71% 58%, 79% 91%, 50% 76%, 21% 91%, 29% 59%, 2% 35%, 36% 31%);
 }
 
-.user-avatar-center{
-    display: block;
-    margin: 10px auto 20px auto;
+.user-avatar:hover{
+    clip-path: polygon(50% 0%, 68% 27%, 98% 35%, 79% 59%, 79% 91%, 49% 82%, 21% 91%, 22% 62%, 2% 35%, 33% 26%);
+    /*transform: scale(1.1);*/
 }
 
 .under-photo{
     width: 80%;
     margin-left: 0;
-}
-
-.user-info-settings-under-photo{
-
 }

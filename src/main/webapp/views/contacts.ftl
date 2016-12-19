@@ -127,7 +127,7 @@
                 <div id="Friend${user.getId()}">
                     <button class="removeButton" onclick="removeContact(${user.getId()})">x</button>
                     <div style="overflow: hidden">
-                        <img class="user-avatar" src="../images/avatars/no_photo2.png" alt="${user.getName()}"/>
+                        <img class="user-avatar" src="/upload/${user.getImage()}" alt="${user.getName()}"/>
 
                         <a class="jetton" href="/user/${user.getId()}">
                             <div class="user-info" style="font-size: 30px">${user.getName()}</div>
@@ -152,7 +152,7 @@
             <#list Users as user>
                 <div id="AllUsers${user.getId()}">
                     <div style="overflow: hidden">
-                        <img class="user-avatar" src="../images/avatars/no_photo2.png" alt="${user.getName()}"/>
+                        <img class="user-avatar" src="/upload/${user.getImage()}" alt="${user.getName()}"/>
 
                         <a class="jetton" href="/user/${user.getId()}">
                             <div class="user-info" style="font-size: 30px">${user.getName()}</div>
