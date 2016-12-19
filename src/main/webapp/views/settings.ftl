@@ -51,11 +51,21 @@
     <div class="center-content">
         <div class="container">
 
-            <form id="change_profile_form" class="news_item" action="/settings" method="post">
-                <div class="title">Настройки профиля</div>
-                <div class="user-info-container">
+            <div class="title">Настройки профиля</div>
+            <div class="user-info-container">
+
+                <form action="/image_load" method="post" enctype="multipart/form-data">
+
                     <img class="user-avatar-center" src="${user.getImage()}"/>
 
+                    <input class="user-avatar-center" name="image" type="file">
+
+                    <div>
+                        <input class="button1 user-avatar-center" type="submit" value="Отправить">
+                    </div>
+                </form>
+
+                <form id="change_profile_form" action="/settings" method="post">
                     <input name="action" value="change_profile" type="hidden">
 
                     <div class="user-info-text">
@@ -83,14 +93,14 @@
                             <option value="S">"Боец"</option>
                         </select>
                     </div>
+                </form>
 
-                </div>
+            </div>
 
-                <input class="button1" type="submit" value="Сохранить"/>
+            <input class="button1" type="submit" value="Сохранить"/>
 
-            </form>
 
-            <form id="change_password_form" class="news_item" action="/settings" method="post" style="display: none">
+            <form id="change_password_form" action="/settings" method="post" style="display: none">
                 <div class="title">Сменить пароль</div>
 
                 <input placeholder="Пароль:" class="input_green" name="text"/>
@@ -99,7 +109,7 @@
                 <input type="submit" class="button1" value="Сменить пароль"/>
             </form>
 
-            <form id="add_expedition_form" class="news_item" action="/settings" method="post" style="display: none">
+            <form id="add_expedition_form" action="/settings" method="post" style="display: none">
                 <div class="title">Добавить экспедицию</div>
 
                 <input class="input_green" type="text" name="name" placeholder="Название:"/>
@@ -154,7 +164,7 @@
             return -1;
         }
 
-        function removeParticipant(id){
+        function removeParticipant(id) {
             delete participants[find(participants, id)];
 
             var containerParticipants = $('#participants_container');
@@ -237,7 +247,7 @@
             listSquads.hide();
             listParticipants.hide();
 
-            function updateListParticipants(){
+            function updateListParticipants() {
                 if (inputParticipants.val() == '') {
                     hideListParticipants();
                     return;
@@ -261,7 +271,7 @@
                     for (var i = 0; i < result.length; i++) {
                         var line = $('<div/>', {
                             text: result[i].name,
-                            onclick: 'addParticipant(' + result[i].id + ',\'' + result[i].name + '\',\'' + result[i].image +'\')',
+                            onclick: 'addParticipant(' + result[i].id + ',\'' + result[i].name + '\',\'' + result[i].image + '\')',
                             'class': 'offer_list_item'
                         });
 
@@ -269,7 +279,7 @@
                     }
 
                     if (needToShow) {
-                        listParticipants.show(700);
+                        listParticipants.show(300);
                     }
                 });
             }
@@ -306,7 +316,7 @@
                     }
 
                     if (needToShow) {
-                        listSquads.show(700);
+                        listSquads.show(300);
                     }
                 });
             }
@@ -315,7 +325,7 @@
                 listSquads.hide(400);
             }
 
-            function hideListParticipants(){
+            function hideListParticipants() {
                 listParticipants.hide(400);
             }
 
