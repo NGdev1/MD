@@ -85,15 +85,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 INSERT INTO `users` (`id`, `login`, `password`, `gender`, `phone`, `DOB`, `city`, `image`, `squad`, `email`, `patronymic`, `surname`, `dolshnost`) VALUES
-  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', '/images/avatars/no_photo2.png', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
-  (30, 'Artur', 63539877, 1, '89600', '1998-03-10', 'Kazan', '/images/avatars/no_photo2.png', 1, '', '', '', ''),
-  (31, 'Lesnik', -1106208330, 1, '89520340416', '1999-03-11', 'Kazan', '/images/avatars/no_photo2.png', 2, '', '', '', ''),
-  (32, 'Rustam', 1450575459, 1, '777', '1996-12-12', 'Kazan', '/images/avatars/no_photo2.png', 3, '', '', '', ''),
-  (33, 'лесник', -1121450961, 1, '89534034584', '1999-03-11', 'Kazan', '/images/avatars/no_photo2.png', 4, '', '', '', ''),
-  (34, 'Darya', 1835010204, 0, '89046606959', '1998-07-05', 'Kazan', '/images/avatars/no_photo2.png', 5, '', '', '', ''),
-  (36, 'Vlad', 867363100, 1, '89063261744', '1998-12-26', 'Kazan', '/images/avatars/no_photo2.png', 3, '', '', '', ''),
-  (38, 'кастрюлька', -378969071, 1, '89053168537', '1997-02-15', 'Kazan', '/images/avatars/no_photo2.png', 2, '', '', '', ''),
-  (40, 'Артем', 1450575459, 1, '89871884634', '1997-08-07', 'Kazan', '/images/avatars/no_photo2.png', 1, '', '', '', '');
+  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', 'no_photo2.png', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
+  (30, 'Artur', 63539877, 1, '89600', '1998-03-10', 'Kazan', 'no_photo2.png', 1, '', '', '', ''),
+  (31, 'Lesnik', -1106208330, 1, '89520340416', '1999-03-11', 'Kazan', 'no_photo2.png', 2, '', '', '', ''),
+  (32, 'Rustam', 1450575459, 1, '777', '1996-12-12', 'Kazan', 'no_photo2.png', 3, '', '', '', ''),
+  (33, 'лесник', -1121450961, 1, '89534034584', '1999-03-11', 'Kazan', 'no_photo2.png', 4, '', '', '', ''),
+  (34, 'Darya', 1835010204, 0, '89046606959', '1998-07-05', 'Kazan', 'no_photo2.png', 5, '', '', '', ''),
+  (36, 'Vlad', 867363100, 1, '89063261744', '1998-12-26', 'Kazan', 'no_photo2.png', 3, '', '', '', ''),
+  (38, 'кастрюлька', -378969071, 1, '89053168537', '1997-02-15', 'Kazan', 'no_photo2.png', 2, '', '', '', ''),
+  (40, 'Артем', 1450575459, 1, '89871884634', '1997-08-07', 'Kazan', 'no_photo2.png', 1, '', '', '', '');
 
 DROP TABLE IF EXISTS `squads`;
 CREATE TABLE IF NOT EXISTS `squads` (

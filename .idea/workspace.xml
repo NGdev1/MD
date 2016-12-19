@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe9a4eb0-f0c9-4956-a725-3673da148d22" name="Default" comment="Добавил кнопку загрузки картинки">
-      <change type="MOVED" beforePath="C:\Users\Михаил\IdeaProjects\MD\src\main\webapp\images\avatars\no_photo2.png" afterPath="$PROJECT_DIR$/src/main/webapp/upload/no_photo2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Contacts.java" afterPath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Contacts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java" afterPath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProPoisk.iml" afterPath="$PROJECT_DIR$/ProPoisk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/contacts.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/contacts.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/expeditions.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/expeditions.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/profile.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/profile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/profile.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/profile.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/user_info/show_user.ftl" afterPath="$PROJECT_DIR$/src/main/webapp/views/user_info/show_user.ftl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+    <list default="true" id="fe9a4eb0-f0c9-4956-a725-3673da148d22" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pro_poisk.sql" afterPath="$PROJECT_DIR$/pro_poisk.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProPosik.iws" />
@@ -71,14 +57,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.ftl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58379376">
+            <state vertical-scroll-proportion="-12.192307">
               <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pro_poisk.users" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/66c58109/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk..users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pro_poisk.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85061514">
+              <caret line="95" column="83" selection-start-line="95" selection-start-column="83" selection-end-line="95" selection-end-column="83" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/JourneyDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/JourneyDaoImpl.java" />
-        <option value="$PROJECT_DIR$/pro_poisk.sql" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/ExpeditionDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/SquadsDaoImpl.java" />
@@ -199,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/expeditions.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/profile.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" />
+        <option value="$PROJECT_DIR$/pro_poisk.sql" />
       </list>
     </option>
   </component>
@@ -1219,7 +1230,7 @@
       <workItem from="1481989263038" duration="8305000" />
       <workItem from="1481997779606" duration="19000" />
       <workItem from="1482074015946" duration="8427000" />
-      <workItem from="1482159673167" duration="12262000" />
+      <workItem from="1482159673167" duration="12362000" />
     </task>
     <task id="LOCAL-00006" summary="Вход и регистрацию починили">
       <created>1480588443763</created>
@@ -1311,11 +1322,17 @@
       <option name="project" value="LOCAL" />
       <updated>1482162602973</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Star in avatars">
+      <created>1482171981587</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1482171981587</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88797000" />
+    <option name="totallyTimeSpent" value="88897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1393,7 +1410,8 @@
     <MESSAGE value="Сделал динамические выпадпющие списки" />
     <MESSAGE value="Работает добавить экспедицию" />
     <MESSAGE value="Добавил кнопку загрузки картинки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил кнопку загрузки картинки" />
+    <MESSAGE value="Star in avatars" />
+    <option name="LAST_COMMIT_MESSAGE" value="Star in avatars" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1630,14 +1648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8523725">
-          <caret line="137" column="36" selection-start-line="137" selection-start-column="36" selection-end-line="137" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/GetJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9560633">
@@ -1717,19 +1727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/66c58109/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk..users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Contacts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8664323">
@@ -1800,13 +1797,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/66c58109/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk..users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58379376">
+        <state vertical-scroll-proportion="-12.192307">
           <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85061514">
+          <caret line="95" column="83" selection-start-line="95" selection-start-column="83" selection-end-line="95" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
