@@ -18,7 +18,7 @@ public class FeedItem {
         this.text = text;
         this.dateTime = dateTime;
 
-        User author =  UserDaoImpl.getInstance().getUser(authorId);
+        User author = UserDaoImpl.getInstance().getUser(authorId);
         if( author != null) {
             this.authorName = author.getName();
         } else {

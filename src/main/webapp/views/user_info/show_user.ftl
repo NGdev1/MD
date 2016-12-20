@@ -45,7 +45,7 @@
 
 
         <#if userInfo??>
-            <img class="user-avatar" src="/upload/${user.getImage()}"/>
+            <img class="user-avatar" src="/upload/${userInfo.getImage()}"/>
 
             <div class="user-info-text">
                 <div class="user-info">${userInfo.getSurname()}</div>

@@ -12,11 +12,13 @@
     <link href="/css/singin.css" rel="stylesheet">
     <link href="/css/profile.css" rel="stylesheet">
     <link href="/css/fullmap.css" rel="stylesheet">
+    <link href="/css/jquery-ui.css" rel="stylesheet">
 
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/settings.js"></script>
     <script src="/js/fileUpload.js"></script>
+    <script src="/js/jquery-ui.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -59,8 +61,10 @@
                     <form id="image_load_form" action="/image_load/${user.getId()}" method="post" enctype="multipart/form-data">
 
                         <div class="center">
-                        <img class="user-avatar" style="float: none" src="/upload/${user.getImage()}"/>
+                            <img class="user-avatar" style="float: none" src="/upload/${user.getImage()}"/>
                         </div>
+
+                        <progress id="progressbar" class="center" value="0" max="100"></progress>
 
                         <input class="center" name="image" type="file" accept="image/jpeg,image/png">
 

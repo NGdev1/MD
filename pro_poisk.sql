@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `point` (
   `id` int(11) NOT NULL,
   `id_expedition` int(11) NOT NULL,
   `name` varchar(1000) NOT NULL,
-  `desc` varchar(2000) NOT NULL,
+  `text` varchar(2000) NOT NULL,
   `date_time` datetime NOT NULL,
   `image` varchar(1000) NOT NULL,
   `longitude` decimal(11,0) NOT NULL,
