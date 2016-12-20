@@ -16,6 +16,7 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/settings.js"></script>
+    <script src="/js/fileUpload.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -55,7 +56,7 @@
                 <div class="title">Настройки профиля</div>
                 <div class="white-container">
 
-                    <form action="/image_load/${user.getId()}" method="post" enctype="multipart/form-data">
+                    <form id="image_load_form" action="/image_load/${user.getId()}" method="post" enctype="multipart/form-data">
 
                         <div class="center">
                         <img class="user-avatar" style="float: none" src="/upload/${user.getImage()}"/>

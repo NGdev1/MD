@@ -47,14 +47,6 @@ INSERT INTO `friends` (`user_id`, `friend_id`) VALUES
   (28, 31),
   (28, 38);
 
-DROP TABLE IF EXISTS `expedition`;
-CREATE TABLE IF NOT EXISTS `expedition` (
-  `id` int(11) NOT NULL,
-  `name` varchar(1000) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `place` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 DROP TABLE IF EXISTS `participants`;
 CREATE TABLE IF NOT EXISTS `participants` (
   `user_id` int(11) NOT NULL,
@@ -115,58 +107,67 @@ INSERT INTO `squads` (`id`, `name`) VALUES
   (11, '"Поиск" МБОУ «Гимназия №96» г.Казань'),
   (12, '"Юные патриоты России" г. Казань');
 
+DROP TABLE IF EXISTS `expedition`;
+CREATE TABLE IF NOT EXISTS `expedition` (
+  `id` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `place` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 ALTER TABLE `feed`
-ADD PRIMARY KEY (`id`),
-ADD KEY `feed_users_id_fk` (`author_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `feed_users_id_fk` (`author_id`);
 
 ALTER TABLE `friends`
-ADD PRIMARY KEY (`user_id`,`friend_id`),
-ADD KEY `friend_id` (`friend_id`);
+  ADD PRIMARY KEY (`user_id`,`friend_id`),
+  ADD KEY `friend_id` (`friend_id`);
 
 ALTER TABLE `expedition`
-ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `participants`
-ADD KEY `user_id` (`user_id`),
-ADD KEY `journey_id` (`journey_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `journey_id` (`journey_id`);
 
 ALTER TABLE `squads`
-ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `squads_in_journey`
-ADD KEY `journey_id` (`journey_id`),
-ADD KEY `squad_id` (`squad_id`);
+  ADD KEY `journey_id` (`journey_id`),
+  ADD KEY `squad_id` (`squad_id`);
 
 ALTER TABLE `users`
-ADD PRIMARY KEY (`id`),
-ADD KEY `id` (`id`),
-ADD KEY `squad_const` (`squad`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`),
+  ADD KEY `squad_const` (`squad`);
 
 
 ALTER TABLE `feed`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
 ALTER TABLE `expedition`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `squads`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 
 ALTER TABLE `feed`
-ADD CONSTRAINT `feed_users_id_fk` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `feed_users_id_fk` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `friends`
-ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `participants`
-ADD CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `squads_in_journey`
-ADD CONSTRAINT `squads_in_journey_ibfk_2` FOREIGN KEY (`squad_id`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `squads_in_journey_ibfk_1` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `squads_in_journey_ibfk_2` FOREIGN KEY (`squad_id`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `squads_in_journey_ibfk_1` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `users`
-ADD CONSTRAINT `squad_const` FOREIGN KEY (`squad`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `squad_const` FOREIGN KEY (`squad`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
