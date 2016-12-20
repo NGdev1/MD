@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe9a4eb0-f0c9-4956-a725-3673da148d22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ProPoisk_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ProPoisk_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProPoisk.iml" afterPath="$PROJECT_DIR$/ProPoisk.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pro_poisk.sql" afterPath="$PROJECT_DIR$/pro_poisk.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java" afterPath="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/fileUpload.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/fileUpload.js" />
     </list>
     <ignored path="ProPosik.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +29,30 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - pro_poisk@127.0.0.1" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - pro_poisk@127.0.0.1" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="feed" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ErrorTreeViewConfiguration">
     <option name="hideWarnings" value="true" />
@@ -45,7 +67,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-117">
+            <state relative-caret-position="0">
               <caret line="308" column="17" lean-forward="false" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
               <folding />
             </state>
@@ -55,21 +77,20 @@
       <file leaf-file-name="fileUpload.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/fileUpload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="495">
               <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
-                <marker date="1482231104000" expanded="true" signature="72:904" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageLoad.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImageLoad.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="52" column="73" lean-forward="false" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
+            <state relative-caret-position="-56">
+              <caret line="22" column="114" lean-forward="false" selection-start-line="22" selection-start-column="114" selection-end-line="22" selection-end-column="114" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,12 +98,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="menu.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/menu.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pro_poisk.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserAuthFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/filters/UserAuthFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="660">
               <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2360#2361#0" expanded="false" />
+                <element signature="e#2390#2391#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,19 +135,9 @@
       <file leaf-file-name="settings.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-600">
+            <state relative-caret-position="270">
               <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-              <folding>
-                <marker date="1482225735000" expanded="true" signature="21:12211" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="28:1512" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1519:12210" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1543:12203" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1623:6009" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1655:5998" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1699:4090" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1804:4070" ph="..." />
-                <marker date="1482225735000" expanded="true" signature="1934:2333" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +145,7 @@
       <file leaf-file-name="settings.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
+            <state relative-caret-position="0">
               <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
@@ -120,7 +155,7 @@
       <file leaf-file-name="profile.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/profile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="240">
               <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
               <folding />
             </state>
@@ -202,12 +237,12 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Journeys.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/menu.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/expeditions.ftl" />
-        <option value="$PROJECT_DIR$/pro_poisk.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/profile.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/settings.ftl" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/fileUpload.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java" />
+        <option value="$PROJECT_DIR$/pro_poisk.sql" />
       </list>
     </option>
   </component>
@@ -265,6 +300,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -275,6 +311,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk-1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk-1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk-1.0-SNAPSHOT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -369,6 +481,10 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -419,6 +535,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProPoisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -614,7 +752,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -628,139 +765,10 @@
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/artifacts/ProPoisk_war_exploded.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/compiler.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.local.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources/c734914d-7b5b-4e42-a07c-07f35fa01f59.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/encodings.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ProPoisk.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pro_poisk.sql</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/ProPoisk/DAO/UserDaoImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Contacts.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Login.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/css/profile.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/css/style.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/js/validation.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/contacts.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/expeditions.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/profile.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/settings.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/unregistered/login.ftl</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/views/user_info/show_user.ftl</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/upload/no_photo2.png</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/webapp/images/avatars/no_photo2.png</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/target/ProPoisk-1.0-SNAPSHOT/upload" />
+    </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -1335,7 +1343,8 @@
       <workItem from="1481893771616" duration="23000" />
       <workItem from="1482062010042" duration="4303000" />
       <workItem from="1482091055181" duration="4388000" />
-      <workItem from="1482216020992" duration="6594000" />
+      <workItem from="1482216020992" duration="6689000" />
+      <workItem from="1482248737688" duration="1704000" />
     </task>
     <task id="LOCAL-00006" summary="Вход и регистрацию починили">
       <created>1480588443763</created>
@@ -1456,15 +1465,22 @@
       <option name="project" value="LOCAL" />
       <updated>1482227710809</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Image load by xmlxttprequest">
+      <created>1482235582243</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1482235582243</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80494000" />
+    <option name="totallyTimeSpent" value="82293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1488,7 +1504,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31643835" sideWeight="0.493125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30547947" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25928918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1549,7 +1565,8 @@
     <MESSAGE value="offer list" />
     <MESSAGE value="JourneyDao added" />
     <MESSAGE value="Expeditions servlet added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Expeditions servlet added" />
+    <MESSAGE value="Image load by xmlxttprequest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image load by xmlxttprequest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1563,26 +1580,26 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.friends">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.friends">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1595,26 +1612,26 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.friends">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.friends">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1653,14 +1670,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.squads">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1675,18 +1692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.users">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1717,7 +1722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,7 +1786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="54" lean-forward="true" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,7 +1793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1828,7 +1830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1844,7 +1845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1864,22 +1864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/menu.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1797">
-          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/Journeys.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1890,7 +1874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="240">
           <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding />
         </state>
@@ -1898,7 +1882,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
+        <state relative-caret-position="0">
           <caret line="308" column="17" lean-forward="false" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
           <folding />
         </state>
@@ -1906,7 +1890,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
+        <state relative-caret-position="0">
           <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
           <folding />
         </state>
@@ -1914,19 +1898,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/settings.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
+        <state relative-caret-position="270">
           <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <marker date="1482225735000" expanded="true" signature="21:12211" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="28:1512" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1519:12210" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1543:12203" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1623:6009" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1655:5998" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1699:4090" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1804:4070" ph="..." />
-            <marker date="1482225735000" expanded="true" signature="1934:2333" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1934,7 +1908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1942,39 +1915,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
           <caret line="86" column="64" lean-forward="true" selection-start-line="86" selection-start-column="64" selection-end-line="86" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/fileUpload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="495">
           <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
-            <marker date="1482231104000" expanded="true" signature="72:904" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/filters/UserAuthFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="660">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2360#2361#0" expanded="false" />
+            <element signature="e#2390#2391#0" expanded="false" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/ProPoisk-1.0-SNAPSHOT/upload/28">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/ServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1986,13 +1955,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/target/ProPoisk-1.0-SNAPSHOT/upload/28">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d8a677a/c734914d-7b5b-4e42-a07c-07f35fa01f59/pro_poisk.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/ProPoisk/servlets/ImageLoad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="52" column="73" lean-forward="false" selection-start-line="52" selection-start-column="73" selection-end-line="52" selection-end-column="73" />
+        <state relative-caret-position="-56">
+          <caret line="22" column="114" lean-forward="false" selection-start-line="22" selection-start-column="114" selection-end-line="22" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/menu.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pro_poisk.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

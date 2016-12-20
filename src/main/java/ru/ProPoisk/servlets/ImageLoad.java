@@ -21,8 +21,6 @@ public class ImageLoad extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         try {
             String userId = req.getRequestURI().substring(12);
             int id = new Integer(userId).intValue();

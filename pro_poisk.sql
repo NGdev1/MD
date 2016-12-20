@@ -53,11 +53,34 @@ CREATE TABLE IF NOT EXISTS `participants` (
   `journey_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `participants` (`user_id`, `journey_id`) VALUES
+  (33, 1),
+  (40, 1),
+  (32, 1),
+  (28, 1);
+
+DROP TABLE IF EXISTS `point`;
+CREATE TABLE IF NOT EXISTS `point` (
+  `id` int(11) NOT NULL,
+  `id_expedition` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `desc` varchar(2000) NOT NULL,
+  `date_time` datetime NOT NULL,
+  `image` varchar(1000) NOT NULL,
+  `longitude` decimal(11,0) NOT NULL,
+  `latitude` decimal(11,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `squads_in_journey`;
 CREATE TABLE IF NOT EXISTS `squads_in_journey` (
   `journey_id` int(11) NOT NULL,
   `squad_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `squads_in_journey` (`journey_id`, `squad_id`) VALUES
+  (1, 1),
+  (1, 4),
+  (1, 8);
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
@@ -77,15 +100,26 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 INSERT INTO `users` (`id`, `login`, `password`, `gender`, `phone`, `DOB`, `city`, `image`, `squad`, `email`, `patronymic`, `surname`, `dolshnost`) VALUES
-  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', 'no_photo2.png', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
-  (30, 'Artur', 63539877, 1, '89600', '1998-03-10', 'Kazan', 'no_photo2.png', 1, '', '', '', ''),
-  (31, 'Lesnik', -1106208330, 1, '89520340416', '1999-03-11', 'Kazan', 'no_photo2.png', 2, '', '', '', ''),
-  (32, 'Rustam', 1450575459, 1, '777', '1996-12-12', 'Kazan', 'no_photo2.png', 3, '', '', '', ''),
-  (33, 'лесник', -1121450961, 1, '89534034584', '1999-03-11', 'Kazan', 'no_photo2.png', 4, '', '', '', ''),
-  (34, 'Darya', 1835010204, 0, '89046606959', '1998-07-05', 'Kazan', 'no_photo2.png', 5, '', '', '', ''),
-  (36, 'Vlad', 867363100, 1, '89063261744', '1998-12-26', 'Kazan', 'no_photo2.png', 3, '', '', '', ''),
-  (38, 'кастрюлька', -378969071, 1, '89053168537', '1997-02-15', 'Kazan', 'no_photo2.png', 2, '', '', '', ''),
-  (40, 'Артем', 1450575459, 1, '89871884634', '1997-08-07', 'Kazan', 'no_photo2.png', 1, '', '', '', '');
+  (28, 'Михаил', 1450572480, 1, '89520340416', '2016-11-02', 'Kazan', '28', 1, 'anreichen.m.@mail.ru', 'Дмитревич', 'Андреичев', 'S'),
+  (30, 'Артур', 1450572480, 1, '89600', '1998-03-10', 'Kazan', 'no_photo2.png', 1, 'balbes@ya.ru', 'Шайтанович', 'Балбесов', 'S'),
+  (31, 'Лесник', 1450572480, 1, '89520340416', '1999-03-11', 'Kazan', 'no_photo2.png', 2, 'balbes@ya.ru', 'Иванович', 'Шайтанов', 'S'),
+  (32, 'Рустам', 1450572480, 1, '777', '1996-12-12', 'Kazan', 'no_photo2.png', 3, 'balbes@ya.ru', 'Шайтанович', 'Щекловек', 'S'),
+  (33, 'Лесник', 1450572480, 1, '89534034584', '1999-03-11', 'Kazan', 'no_photo2.png', 4, 'balbes@ya.ru', 'Шайтановна', 'Непосредственно', 'S'),
+  (34, 'Дарья', 1450572480, 0, '89046606959', '1998-07-05', 'Kazan', 'no_photo2.png', 5, 'balbes@ya.ru', 'Шайтанович', 'Есть', 'S'),
+  (36, 'Влад', 1450572480, 1, '89063261744', '1998-12-26', 'Kazan', 'no_photo2.png', 3, 'balbes@ya.ru', 'Шайтанович', 'Достал нож режь', 'S'),
+  (38, 'Кастрюлька', 1450572480, 1, '89053168537', '1997-02-15', 'Kazan', 'no_photo2.png', 2, 'balbes@ya.ru', 'Шайтанович', 'Не достал не порезал', 'S'),
+  (40, 'Артем', 1450572480, 1, '89871884634', '1997-08-07', 'Kazan', 'no_photo2.png', 1, 'balbes@ya.ru', 'Шайтанович', 'да', 'S');
+
+DROP TABLE IF EXISTS `expedition`;
+CREATE TABLE IF NOT EXISTS `expedition` (
+  `id` int(11) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `place` varchar(1000) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `expedition` (`id`, `name`, `status`, `place`) VALUES
+  (1, 'В хануму', 0, 'Казань кфу');
 
 DROP TABLE IF EXISTS `squads`;
 CREATE TABLE IF NOT EXISTS `squads` (
@@ -107,14 +141,9 @@ INSERT INTO `squads` (`id`, `name`) VALUES
   (11, '"Поиск" МБОУ «Гимназия №96» г.Казань'),
   (12, '"Юные патриоты России" г. Казань');
 
-DROP TABLE IF EXISTS `expedition`;
-CREATE TABLE IF NOT EXISTS `expedition` (
-  `id` int(11) NOT NULL,
-  `name` varchar(1000) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `place` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+ALTER TABLE `expedition`
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `feed`
   ADD PRIMARY KEY (`id`),
@@ -124,12 +153,13 @@ ALTER TABLE `friends`
   ADD PRIMARY KEY (`user_id`,`friend_id`),
   ADD KEY `friend_id` (`friend_id`);
 
-ALTER TABLE `expedition`
-  ADD PRIMARY KEY (`id`);
-
 ALTER TABLE `participants`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `journey_id` (`journey_id`);
+
+ALTER TABLE `point`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_expedition` (`id_expedition`);
 
 ALTER TABLE `squads`
   ADD PRIMARY KEY (`id`);
@@ -144,10 +174,10 @@ ALTER TABLE `users`
   ADD KEY `squad_const` (`squad`);
 
 
+ALTER TABLE `expedition`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 ALTER TABLE `feed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=99;
-ALTER TABLE `expedition`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `squads`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 ALTER TABLE `users`
@@ -161,12 +191,15 @@ ALTER TABLE `friends`
   ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`friend_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `participants`
-  ADD CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `participants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `participants_ibfk_2` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `point`
+  ADD CONSTRAINT `point_ibfk_1` FOREIGN KEY (`id_expedition`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `squads_in_journey`
-  ADD CONSTRAINT `squads_in_journey_ibfk_2` FOREIGN KEY (`squad_id`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `squads_in_journey_ibfk_1` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `squads_in_journey_ibfk_1` FOREIGN KEY (`journey_id`) REFERENCES `expedition` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `squads_in_journey_ibfk_2` FOREIGN KEY (`squad_id`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `users`
   ADD CONSTRAINT `squad_const` FOREIGN KEY (`squad`) REFERENCES `squads` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
