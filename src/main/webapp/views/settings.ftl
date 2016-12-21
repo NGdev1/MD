@@ -58,18 +58,15 @@
                 <div class="title">Настройки профиля</div>
                 <div class="white-container">
 
-                    <form id="image_load_form" action="/image_load/${user.getId()}" method="post" enctype="multipart/form-data">
+                    <div class="center">
+                        <img class="user-avatar" style="float: none" src="/upload/${user.getImage()}"/>
+                    </div>
 
-                        <div class="center">
-                            <img class="user-avatar" style="float: none" src="/upload/${user.getImage()}"/>
-                        </div>
+                    <progress id="progressbar" class="center" value="0" max="100"></progress>
 
-                        <progress id="progressbar" class="center" value="0" max="100"></progress>
+                    <input class="center" name="image" type="file" accept="image/jpeg,image/png"
+                           url="/image_load/${user.getId()}">
 
-                        <input class="center" name="image" type="file" accept="image/jpeg,image/png">
-
-                        <input class="button center" type="submit" value="Отправить">
-                    </form>
 
                     <form action="/settings" method="post">
                         <input name="action" value="change_profile" type="hidden">

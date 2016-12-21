@@ -5,13 +5,13 @@
 $(document).ready(function () {
     var progressBar = $('#progressbar');
 
-    $('#image_load_form').submit(function() {
-        var file = this.elements.image.files[0];
+    $('input[name=image]').change(function(){
+        var file = this.files[0];
 
+        var url = $(this).attr("url");
         if (file) {
-            upload(file, this.action);
+            upload(file, url);
         }
-        return false;
     });
 
 
@@ -38,6 +38,7 @@ $(document).ready(function () {
 
         xhr.open("POST", url, true);
         xhr.send(file);
+
 
     }
 });
