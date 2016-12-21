@@ -23,9 +23,10 @@
 <#include "header.ftl">
 <#include "menu.ftl">
 
-    <form action="" method="get" id="add_point_form">
+    <form method="post" id="add_point_form">
         <div style="height: 0;"><button type="button" style="right: 10px;font-size: 20px; background: none; border: none; position: absolute;" onclick="$('#add_point_form').hide(300)">x</button></div>
 
+        <input type="hidden" value="add_point" name="action">
         <div class="title">Добавить точку</div>
         <label for="name">Название:</label>
         <input class="form-control" id="name" type="text" name="name">

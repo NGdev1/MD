@@ -76,7 +76,7 @@ public class UserDaoImpl implements UserDao {
             user = new User(
                     resultSet.getString("login"),
                     resultSet.getInt("password"),
-                    stringToBoolean(resultSet.getString("gender")),
+                    resultSet.getBoolean("gender"),
                     resultSet.getString("phone"),
                     resultSet.getString("DOB"),
                     resultSet.getString("city"),
@@ -122,7 +122,7 @@ public class UserDaoImpl implements UserDao {
             user = new User(
                     resultSet.getString("login"),
                     resultSet.getInt("password"),
-                    stringToBoolean(resultSet.getString("gender")),
+                    resultSet.getBoolean("gender"),
                     resultSet.getString("phone"),
                     resultSet.getString("DOB"),
                     resultSet.getString("city"),
@@ -215,15 +215,6 @@ public class UserDaoImpl implements UserDao {
         Connection connection = DbWrapper.getConnection();
         String query = "SELECT * FROM pro_poisk.users WHERE login LIKE '%" + q + "%' OR surname LIKE '%" + q + "%' OR patronymic LIKE '%" + q + "%';";
         return getUsersFromResultSet(connection.createStatement().executeQuery(query));
-    }
-
-    public static boolean stringToBoolean(String s) {
-        return !s.equals("0");
-    }
-
-    public static String booleanToString(Boolean b) {
-        if (b) return "1";
-        else return "0";
     }
 
     public void setUserImage(String imageName , int id) {

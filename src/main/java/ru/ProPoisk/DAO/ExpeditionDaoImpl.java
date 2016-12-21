@@ -1,6 +1,7 @@
 package ru.ProPoisk.DAO;
 
 import ru.ProPoisk.models.Expedition;
+import ru.ProPoisk.models.Point;
 import ru.ProPoisk.models.Squad;
 import ru.ProPoisk.models.User;
 import ru.ProPoisk.utils.DbWrapper;
@@ -67,6 +68,15 @@ public class ExpeditionDaoImpl implements ExpeditionDao {
 
             preparedStatement.execute();
         }
+    }
+
+    @Override
+    public List<Point> getPointsFromExpedition(int expeditionId) throws SQLException {
+        Connection connection = DbWrapper.getConnection();
+        String query = "SELECT * FROM pro_poisk.point WHERE id_expedition=?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, expeditionId);
+        return PointDaoImpl.getPointsFromResultSet(preparedStatement.executeQuery());
     }
 
     @Override
@@ -156,6 +166,7 @@ public class ExpeditionDaoImpl implements ExpeditionDao {
         );
         expedition.setParticipants(getUsersFromExpedition(expedition));
         expedition.setSquads(gertSquadsFromExpedition(expedition));
+        expedition.setPoints(getPointsFromExpedition(expedition.getId()));
 
         return expedition;
     }
@@ -172,6 +183,7 @@ public class ExpeditionDaoImpl implements ExpeditionDao {
             );
             expedition.setParticipants(getUsersFromExpedition(expedition));
             expedition.setSquads(gertSquadsFromExpedition(expedition));
+            expedition.setPoints(getPointsFromExpedition(expedition.getId()));
 
             expeditions.add(expedition);
         }

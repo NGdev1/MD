@@ -77,7 +77,7 @@ $(document).ready(function () {
                             "surname" : $('input[name=surname]').val(),
                             "sex" : $('input[name=sex]:checked').val(),
                             "patronymic" : $('input[name=patronymic]').val(),
-                            "dolshnost" : "pidor"
+                            "dolshnost" : "S"
                         }
                     }).done(function(data) {
                         if(data == "success"){

@@ -13,14 +13,16 @@ public class Expedition {
     private String place;
     private List<Squad> squads;
     private List<User> participants;
+    private List<Point> points;
 
-    public Expedition(int id, String name, boolean status, String place, List<Squad> squads, List<User> participants){
+    public Expedition(int id, String name, boolean status, String place, List<Squad> squads, List<User> participants, List<Point> points){
         this.id = id;
         this.name = name;
         this.status = status;
         this.place = place;
         this.squads = squads;
         this.participants = participants;
+        this.points = points;
     }
 
     public Expedition(int id, String name, boolean status, String place){
@@ -56,11 +58,19 @@ public class Expedition {
         return participants;
     }
 
+    public List<Point> getPoints() {
+        return points;
+    }
+
     public void setSquads(List<Squad> squads) {
         this.squads = squads;
     }
 
     public void setParticipants(List<User> participants) {
         this.participants = participants;
+    }
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 }
