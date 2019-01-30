@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Михаил on 12.12.2016.
+
  */
 
 @WebServlet("/user/*")

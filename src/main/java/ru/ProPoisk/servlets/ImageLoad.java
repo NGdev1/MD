@@ -8,9 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 import ru.ProPoisk.models.User;
 
@@ -46,9 +44,11 @@ public class ImageLoad extends HttpServlet {
 
             req.getSession().setAttribute("user", user);
 
-            resp.sendRedirect("/settings");
+            PrintWriter writer = resp.getWriter();
+            writer.write("success");
         } catch (Exception e) {
             System.out.println("Error loading image: " + e.getMessage());
+            resp.setStatus(500);
         }
     }
 }

@@ -23,6 +23,10 @@
 <#include "header.ftl">
 <#include "menu.ftl">
 
+    <#if expedition??>
+        <div style="position: relative; background: white; width: 300px" class="center title">Экспедиция ${expedition.getName()}</div>
+    </#if>
+
     <form method="post" id="add_point_form">
         <div style="height: 0;"><button type="button" style="right: 10px;font-size: 20px; background: none; border: none; position: absolute;" onclick="$('#add_point_form').hide(300)">x</button></div>
 

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Created by apple on 01.11.16.
+
  */
 
 public class FeedItemDao {

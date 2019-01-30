@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by apple on 22.08.16.
+
  */
 public class UserServiceImpl implements UserService {
 

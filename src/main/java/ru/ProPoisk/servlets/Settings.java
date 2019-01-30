@@ -19,7 +19,6 @@ import java.sql.SQLException;
 import java.util.Arrays;
 
 /**
- * Created by Михаил on 13.11.2016.
  */
 
 @WebServlet("/settings")

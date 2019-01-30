@@ -7,8 +7,8 @@ $(document).ready(function () {
 
     $('input[name=image]').change(function(){
         var file = this.files[0];
-
         var url = $(this).attr("url");
+
         if (file) {
             upload(file, url);
         }
@@ -38,7 +38,5 @@ $(document).ready(function () {
 
         xhr.open("POST", url, true);
         xhr.send(file);
-
-
     }
 });

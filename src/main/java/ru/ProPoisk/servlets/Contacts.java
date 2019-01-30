@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Михаил on 13.11.2016.
  */
 
 @WebServlet("/contacts")

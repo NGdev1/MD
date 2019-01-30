@@ -19,7 +19,7 @@ import java.util.Date;
 @WebServlet("/feed")
 
 /**
- * Created by apple on 27.09.16.
+
  */
 
 public class Feed extends HttpServlet {

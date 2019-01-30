@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by apple on 18.12.16.
+
  */
 public interface ExpeditionDao {
     void saveJourney(Expedition expedition) throws SQLException;

@@ -6,9 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
- * @author Artem Zalupa
- * Спасибо Артем!
+
  */
 
 public class FormDataCheck {

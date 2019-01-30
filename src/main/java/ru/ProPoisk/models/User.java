@@ -5,7 +5,6 @@ import ru.ProPoisk.DAO.SquadsDaoImpl;
 import java.sql.SQLException;
 
 /**
- * Created by apple on 18.08.16.
  */
 
 public class User {

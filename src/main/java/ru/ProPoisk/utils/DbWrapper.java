@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbWrapper {
     private final static String DRIVER = "com.mysql.jdbc.Driver";
-    private final static String CONNECTION_URI = "jdbc:mysql://localhost:3306/?characterEncoding=UTF-8";
+    private final static String CONNECTION_URI = "jdbc:mysql://127.0.0.1:3306/?characterEncoding=UTF-8";
     private final static String LOGIN = "root";
     private final static String PASSWORD = "root";
 

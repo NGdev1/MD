@@ -12,7 +12,7 @@ import java.sql.SQLException;
 @WebServlet("/profile")
 
 /**
- * Created by apple on 27.09.16.
+
  */
 
 public class Home extends HttpServlet {

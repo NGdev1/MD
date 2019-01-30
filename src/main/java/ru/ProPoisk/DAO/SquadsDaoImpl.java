@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Михаил on 14.12.2016.
+
  */
 public class SquadsDaoImpl implements SquadsDao {
     private SquadsDaoImpl(){

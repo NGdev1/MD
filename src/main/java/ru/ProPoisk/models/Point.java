@@ -1,7 +1,7 @@
 package ru.ProPoisk.models;
 
 /**
- * Created by Михаил on 20.12.2016.
+
  */
 public class Point {
     int id;

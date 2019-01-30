@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * Created by apple on 23.09.16.
  */
 
 @WebServlet("/register")

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by apple on 18.08.16.
  */
 public interface UserDao {
     void saveUser(User user) throws SQLException;

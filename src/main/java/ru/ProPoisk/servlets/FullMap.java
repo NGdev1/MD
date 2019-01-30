@@ -15,9 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
- * Created by Михаил on 01.12.2016.
+
  */
 @WebServlet("/full_map/*")
 public class FullMap extends HttpServlet {
@@ -32,7 +33,14 @@ public class FullMap extends HttpServlet {
             Expedition expedition = expeditionDao.getJourney(idExpedition);
             req.setAttribute("expedition", expedition);
         }catch (Exception e){
+            //ignore error
+        }
 
+        try {
+            List<Point> points = pointDao.getAll();
+            req.setAttribute("points", points);
+        } catch (SQLException e) {
+            System.out.println("Error getting all points: " + e.getMessage());
         }
 
         req.getServletContext().getRequestDispatcher("/full_map.ftl").forward(req, resp);
@@ -40,6 +48,9 @@ public class FullMap extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+
         try {
             String action = req.getParameter("action");
 

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Михаил on 20.12.2016.
+
  */
 public interface PointDao {
     void savePoint(Point point) throws SQLException;

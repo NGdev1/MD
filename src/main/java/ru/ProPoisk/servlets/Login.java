@@ -10,7 +10,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * Created by apple on 23.09.16.
+
  */
 
 @WebServlet("/login")

@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by apple on 11.10.16.
  */
 public class UserAuthFilter implements Filter {
 

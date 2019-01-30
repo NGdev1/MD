@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * Created by apple on 18.12.16.
+
  */
 @WebServlet("/expeditions")
 public class Journeys extends HttpServlet {

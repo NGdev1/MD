@@ -1,6 +1,6 @@
 package ru.ProPoisk.DAO;
 /**
- * Created by apple on 24.08.16.
+
  */
 
 import ru.ProPoisk.models.User;

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Михаил on 20.12.2016.
  */
 public class PointDaoImpl implements PointDao {
     private static PointDaoImpl ourInstance = new PointDaoImpl();

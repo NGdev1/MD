@@ -3,7 +3,7 @@ package ru.ProPoisk.models;
 import ru.ProPoisk.DAO.UserDaoImpl;
 
 /**
- * Created by apple on 01.11.16.
+
  */
 
 public class FeedItem {

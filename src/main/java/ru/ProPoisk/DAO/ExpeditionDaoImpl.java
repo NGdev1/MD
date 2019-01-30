@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by apple on 18.12.16.
+
  */
 public class ExpeditionDaoImpl implements ExpeditionDao {
 

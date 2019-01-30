@@ -1,7 +1,6 @@
 package ru.ProPoisk.models;
 
 /**
- * Created by Михаил on 14.12.2016.
  */
 public class Squad {
     private int id;
